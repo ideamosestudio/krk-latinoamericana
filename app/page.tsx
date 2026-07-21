@@ -36,12 +36,21 @@ function DoubleActions({ primary, secondary, primaryHref = "#contacto", secondar
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [useHeroVideo, setUseHeroVideo] = useState(false);
 
   useEffect(() => {
     const items = document.querySelectorAll<HTMLElement>("[data-reveal]");
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("in-view")), { threshold: 0.14 });
     items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 901px) and (prefers-reduced-motion: no-preference)");
+    const updateHeroMedia = () => setUseHeroVideo(media.matches);
+    updateHeroMedia();
+    media.addEventListener("change", updateHeroMedia);
+    return () => media.removeEventListener("change", updateHeroMedia);
   }, []);
 
   return (
@@ -61,7 +70,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="inicio">
-        <img className="hero-image" src="/images/PORTADA-006.jpg" alt="Sistema KRK para transporte de materiales a granel" />
+        {useHeroVideo ? <video className="hero-video" src="/images/video-portada.mp4" poster="/images/PORTADA-006.jpg" autoPlay muted loop playsInline aria-hidden="true" /> : <img className="hero-image" src="/images/PORTADA-006.jpg" alt="Sistema KRK para transporte de materiales a granel" />}
         <div className="hero-shade" /><div className="hero-grid" />
         <div className="hero-content container">
           <div className="hero-kicker"><span>MOVING WHAT MATTERS</span></div>
@@ -71,7 +80,6 @@ export default function Home() {
         </div>
         <div className="hero-tech hero-tech-a"><span>01</span><i /></div>
         <div className="hero-tech hero-tech-b"><span>2001 — 2026</span><i /></div>
-        <div className="hero-scope"><i /><span>LATAM</span><small>INGENIERÍA EN MOVIMIENTO</small></div>
       </section>
 
       <section className="trust" id="experiencia">
