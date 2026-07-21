@@ -17,10 +17,10 @@ const clients = [
 ];
 
 const sectors = [
-  { n: "01", title: "Minería", copy: "Sistemas de transporte y manejo de concentrados diseñados para operar en condiciones de máxima exigencia.", stat: "4.850 m", label: "Altura de operación" },
-  { n: "02", title: "Agroindustria", copy: "Recepción, almacenaje, proceso y despacho de granos y derivados con alta capacidad y continuidad operativa.", stat: "24/7", label: "Continuidad operativa" },
-  { n: "03", title: "Puertos y terminales", copy: "Infraestructura para carga, descarga y transferencia de materiales a granel en operaciones portuarias.", stat: "60+ km", label: "De transportadores" },
-  { n: "04", title: "Energía e industria", copy: "Equipos y componentes a medida para procesos críticos industriales, energéticos y cementeros.", stat: "100+", label: "Proyectos integrales" },
+  { n: "01", title: "Más de 25 años", copy: "Desde 2001 desarrollando sistemas de manejo de materiales a granel." },
+  { n: "02", title: "Ingeniería multidisciplinaria", copy: "Ingeniería conceptual, básica y de detalle para proyectos industriales y mineros." },
+  { n: "03", title: "Ejecución Integral", copy: "Desde los estudios de factibilidad hasta la puesta en marcha." },
+  { n: "04", title: "Presencia Regional", copy: "Proyectos ejecutados en Argentina, Chile, Brasil, Paraguay y Uruguay." },
 ];
 
 const services = [
@@ -89,7 +89,7 @@ export default function Home() {
 
       <section className="sectors section" id="sectores" data-reveal>
         <div className="container"><div className="section-title-row"><div className="eyebrow light"><span /> ÁREAS DE EXPERIENCIA</div><div><p className="section-overline">ENGINEERING MOVEMENT</p><h2>Ingeniería integral para<br /><em>proyectos exigentes.</em></h2></div></div>
-          <div className="sector-grid">{sectors.map((s) => <article className="sector-card" key={s.n}><div className="card-grid" /><div className="card-top"><span>KRK / {s.n}</span><b>↗</b></div><div className="technical-mark"><i /><i /><i /><i /></div><div className="sector-stat"><strong>{s.stat}</strong><small>{s.label}</small></div><div className="sector-copy"><h3>{s.title}</h3><p>{s.copy}</p></div></article>)}</div><DoubleActions primary="Explorar industrias" secondary="Hablar con ingeniería" primaryHref="#sectores" secondaryHref="#contacto" light />
+          <div className="sector-grid">{sectors.map((s) => <article className="sector-card" key={s.n}><div className="card-grid" /><div className="card-top"><span>KRK / {s.n}</span><b>↗</b></div><div className="technical-mark"><i /><i /><i /><i /></div><div className="sector-copy sector-copy-factual"><h3>{s.title}</h3><p>{s.copy}</p></div></article>)}</div><DoubleActions primary="Explorar industrias" secondary="Hablar con ingeniería" primaryHref="#sectores" secondaryHref="#contacto" light />
         </div>
       </section>
 
