@@ -89,7 +89,7 @@ export default function Home() {
 
       <section className="sectors section" id="sectores" data-reveal>
         <div className="container"><div className="section-title-row"><div className="eyebrow light"><span /> ÁREAS DE EXPERIENCIA</div><div><p className="section-overline">ENGINEERING MOVEMENT</p><h2>Ingeniería integral para<br /><em>proyectos exigentes.</em></h2></div></div>
-          <div className="sector-grid">{sectors.map((s) => <article className="sector-card" key={s.n}><div className="card-grid" /><div className="card-top"><span>KRK / {s.n}</span><b>↗</b></div><div className="technical-mark"><i /><i /><i /><i /></div><div className="sector-copy sector-copy-factual"><h3>{s.title}</h3><p>{s.copy}</p></div></article>)}</div><DoubleActions primary="Explorar industrias" secondary="Hablar con ingeniería" primaryHref="#sectores" secondaryHref="#contacto" light />
+          <div className="sector-grid">{sectors.map((s) => <article className="sector-card" key={s.n}><div className="card-grid" /><div className="card-top"><span>KRK / {s.n}</span><b>↗</b></div><div className={`technical-mark technical-mark-${s.n}`}><i /><i /><i /><i /><span /></div><div className="sector-copy sector-copy-factual"><h3>{s.title}</h3><p>{s.copy}</p></div></article>)}</div><DoubleActions primary="Explorar industrias" secondary="Hablar con ingeniería" primaryHref="#sectores" secondaryHref="#contacto" light />
         </div>
       </section>
 
