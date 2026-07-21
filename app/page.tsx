@@ -65,10 +65,13 @@ export default function Home() {
         <div className="hero-shade" /><div className="hero-grid" />
         <div className="hero-content container">
           <div className="hero-kicker"><span>MOVING WHAT MATTERS</span></div>
-          <h1><span className="hero-line">From Concept to</span><span className="hero-line">commissioning</span></h1>
+          <h1><span className="hero-line">From concept to</span><span className="hero-line hero-accent">commissioning.</span></h1>
           <p className="hero-description">Ingeniería, fabricación y ejecución de sistemas para transporte de materiales a granel en minería, puertos, agroindustria, energía e industria.</p>
           <DoubleActions primary="Conocer soluciones" secondary="Descubrir KRK" primaryHref="#soluciones" secondaryHref="#empresa" light />
         </div>
+        <div className="hero-tech hero-tech-a"><span>01</span><i /></div>
+        <div className="hero-tech hero-tech-b"><span>2001 — 2026</span><i /></div>
+        <div className="hero-scope"><i /><span>LATAM</span><small>INGENIERÍA EN MOVIMIENTO</small></div>
       </section>
 
       <section className="trust" id="experiencia">
@@ -96,7 +99,7 @@ export default function Home() {
 
       <section className="project section" data-reveal><div className="container project-grid"><div className="project-image"><img src="/images/PORTADA-003.jpg" alt="Proyecto de transporte ejecutado por KRK" /><span>CAPACIDAD EN CAMPO / 01</span></div><div className="project-copy"><div className="eyebrow"><span /> FROM CONCEPT TO COMMISSIONING</div><h2>Una solución.<br /><em>Todas las etapas.</em></h2><p>Nuestra experiencia, capacidad técnica y red de fabricación nos permite acompañar a cada cliente con soluciones confiables, competitivas y adaptadas a las exigencias de su operación.</p><dl><div><dt>01</dt><dd>Estudios de factibilidad</dd></div><div><dt>02</dt><dd>Ingeniería conceptual, básica y de detalle</dd></div><div><dt>03</dt><dd>Fabricación, suministro y montaje</dd></div><div><dt>04</dt><dd>Puesta en marcha y soporte técnico</dd></div></dl><DoubleActions primary="Iniciar una conversación" secondary="Ver servicios" primaryHref="#contacto" secondaryHref="#soluciones" /></div></div></section>
 
-      <section className="contact" id="contacto" data-reveal><div className="container contact-grid"><div><div className="eyebrow light"><span /> CONTACTANOS</div><h2>Movemos lo que<br /><em>importa.</em></h2></div><div className="contact-side"><p>Completá el formulario con tus datos de contacto y en breve nos estaremos comunicando con vos.</p><DoubleActions primary="Escribir por email" secondary="Volver al inicio" primaryHref="mailto:contactenos@krk.com" secondaryHref="#inicio" light /></div></div></section>
+      <section className="contact" id="contacto" data-reveal><div className="contact-gridlines" /><div className="contact-glow contact-glow-a" /><div className="contact-glow contact-glow-b" /><div className="contact-beam" /><div className="container contact-grid"><div><div className="eyebrow light"><span /> CONTACTANOS</div><h2>Movemos lo que<br /><em>importa.</em></h2></div><div className="contact-side"><p>Completá el formulario con tus datos de contacto y en breve nos estaremos comunicando con vos.</p><DoubleActions primary="Escribir por email" secondary="Volver al inicio" primaryHref="mailto:contactenos@krk.com" secondaryHref="#inicio" light /></div></div></section>
 
       <footer><div className="container footer-top"><img src="/images/KRK-LOGO-BLANCO-3.png" alt="KRK Latinoamericana" /><p>Ingeniería, fabricación y ejecución de sistemas para transporte de materiales a granel.</p><a href="#inicio">VOLVER ARRIBA ↑</a></div><div className="container footer-grid"><div><b>OFICINAS COMERCIALES</b><p>Monroe 5088 (CP1431). Piso 3.<br />Ciudad Autónoma de Buenos Aires, Argentina.<br />Tel +54 11 6841-7800</p></div><div><b>PLANTA INDUSTRIAL</b><p>Av. Nicolás Bruzone 1136 (B1838BHD).<br />Provincia de Buenos Aires, Argentina.</p></div><div><b>NAVEGACIÓN</b><p><a href="#empresa">Quiénes somos</a><br /><a href="#soluciones">Productos y servicios</a><br /><a href="#sectores">Industrias</a></p></div><div><b>PRESENCIA</b><p>Argentina · Chile · Brasil<br />Paraguay · Uruguay</p></div></div><div className="container footer-bottom"><span>© 2026 KRK LATINOAMERICANA S.A.</span><span>MOVING WHAT MATTERS</span></div></footer>
     </main>
