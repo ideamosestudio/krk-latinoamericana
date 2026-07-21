@@ -36,21 +36,12 @@ function DoubleActions({ primary, secondary, primaryHref = "#contacto", secondar
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [useHeroVideo, setUseHeroVideo] = useState(false);
 
   useEffect(() => {
     const items = document.querySelectorAll<HTMLElement>("[data-reveal]");
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("in-view")), { threshold: 0.14 });
     items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const media = window.matchMedia("(min-width: 901px) and (prefers-reduced-motion: no-preference)");
-    const updateHeroMedia = () => setUseHeroVideo(media.matches);
-    updateHeroMedia();
-    media.addEventListener("change", updateHeroMedia);
-    return () => media.removeEventListener("change", updateHeroMedia);
   }, []);
 
   return (
@@ -70,7 +61,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="inicio">
-        {useHeroVideo ? <video className="hero-video" src="/images/video-portada.mp4" poster="/images/PORTADA-006.jpg" autoPlay muted loop playsInline aria-hidden="true" /> : <img className="hero-image" src="/images/PORTADA-006.jpg" alt="Sistema KRK para transporte de materiales a granel" />}
+        <img className="hero-image" src="/images/PORTADA-006.jpg" alt="Sistema KRK para transporte de materiales a granel" />
         <div className="hero-shade" /><div className="hero-grid" />
         <div className="hero-content container">
           <div className="hero-kicker"><span>MOVING WHAT MATTERS</span></div>
@@ -103,7 +94,7 @@ export default function Home() {
 
       <section className="services section" id="soluciones" data-reveal><div className="container services-grid"><div className="services-intro"><div className="eyebrow"><span /> NUESTROS PRODUCTOS Y SERVICIOS</div><h2>Soluciones integrales para el manejo de <em>materiales a granel.</em></h2><p>Equipos, componentes e ingeniería para sistemas de transporte y manejo de materiales a granel en operaciones industriales, mineras y portuarias.</p><DoubleActions primary="Solicitar asesoramiento" secondary="Ver capacidades" primaryHref="#contacto" secondaryHref="#soluciones" /></div><div className="service-list">{services.map((s) => <article key={s.n}><span>{s.n}</span><div><h3>{s.title}</h3><p>{s.copy}</p></div><b>↗</b></article>)}</div></div></section>
 
-      <section className="engineering-banner" data-reveal><img src="/images/BACK-002.jpg" alt="Ingeniería y fabricación de KRK" /><div className="banner-shade" /><div className="container banner-content"><div className="eyebrow light"><span /> ENGINEERING MOVEMENT</div><h2>De la idea<br /><em>a la operación.</em></h2><p>KRK integra todas las etapas del proyecto en una misma solución: análisis técnico, ingeniería, fabricación, suministro, montaje y puesta en marcha. Esta visión permite reducir interfaces, ordenar la ejecución y asegurar sistemas confiables para operaciones de largo plazo.</p><DoubleActions primary="Conversemos sobre su proyecto" secondary="Conocer el proceso" primaryHref="#contacto" secondaryHref="#soluciones" light /></div></section>
+      <section className="engineering-banner" data-reveal><img src="/images/BACK-002.jpg" alt="Ingeniería y fabricación de KRK" /><div className="banner-shade" /><div className="container banner-content"><div className="eyebrow light"><span /> ENGINEERING MOVEMENT</div><h2>Ingeniería integral para<br /><em>proyectos exigentes.</em></h2><p>KRK integra todas las etapas del proyecto en una misma solución: análisis técnico, ingeniería, fabricación, suministro, montaje y puesta en marcha. Esta visión permite reducir interfaces, ordenar la ejecución y asegurar sistemas confiables para operaciones de largo plazo.</p><DoubleActions primary="Conversemos sobre su proyecto" secondary="Conocer el proceso" primaryHref="#contacto" secondaryHref="#soluciones" light /></div></section>
 
       <section className="project section" data-reveal><div className="container project-grid"><div className="project-image"><img src="/images/IMG-009.jpg" alt="Sistema transportador de KRK en operación" /><span>CAPACIDAD EN CAMPO / 01</span></div><div className="project-copy"><div className="eyebrow"><span /> FROM CONCEPT TO COMMISSIONING</div><h2>Una solución.<br /><em>Todas las etapas.</em></h2><p>Nuestra experiencia, capacidad técnica y red de fabricación nos permite acompañar a cada cliente con soluciones confiables, competitivas y adaptadas a las exigencias de su operación.</p><dl><div><dt>01</dt><dd>Minería</dd></div><div><dt>02</dt><dd>Agroindustria</dd></div><div><dt>03</dt><dd>Energía e industria</dd></div><div><dt>04</dt><dd>Puertos y terminales</dd></div></dl><DoubleActions primary="Iniciar una conversación" secondary="Ver servicios" primaryHref="#contacto" secondaryHref="#soluciones" /></div></div></section>
 
