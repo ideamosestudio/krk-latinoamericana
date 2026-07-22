@@ -30,7 +30,7 @@ export function SiteHeader() {
       <div className={`nav-links ${menuOpen ? "open" : ""}`}>
         <a href={`${base}/quienes-somos/`} onClick={close}>Quiénes somos</a>
         <div className={`nav-services ${servicesOpen ? "is-open" : ""}`} onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-          <button type="button" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen}>Productos y servicios <i>⌄</i></button>
+          <button type="button" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen}>Productos y servicios</button>
           <div className="nav-dropdown">
             <a className="dropdown-overview" href={`${base}/servicios/`} onClick={close}><span>Ver todos los servicios</span><b>↗</b></a>
             {serviceLinks.map(([n, label, slug]) => <a href={`${base}/servicios/${slug}/`} onClick={close} key={slug}><small>{n}</small><span>{label}</span><b>↗</b></a>)}
