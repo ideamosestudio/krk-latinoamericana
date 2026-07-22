@@ -36,8 +36,6 @@ export function SiteHeader() {
             {serviceLinks.map(([n, label, slug]) => <a href={`${base}/servicios/${slug}/`} onClick={close} key={slug}><small>{n}</small><span>{label}</span><b>↗</b></a>)}
           </div>
         </div>
-        <a href={`${base}/#sectores`} onClick={close}>Industrias</a>
-        <a href={`${base}/#experiencia`} onClick={close}>Experiencia</a>
       </div>
       <a className="nav-cta" href={`${base}/#contacto`} onClick={close}><span>Iniciar un proyecto</span><i>↗</i></a>
       <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menú" aria-expanded={menuOpen}><i /><i /></button>
