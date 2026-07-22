@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { SiteHeader } from "./_components/SiteHeader";
 
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -26,10 +27,10 @@ const sectors = [
 ];
 
 const services = [
-  { n: "01", title: "Bulk material handling equipment", copy: "Diseñamos y suministramos transportadores de banda, pipe conveyors, enclosed conveyors, shuttle conveyors, reversible conveyors y overland conveyors, además de belt feeders, bucket elevators, tripper cars y sistemas móviles o fijos de transferencia." },
-  { n: "02", title: "Conveyor components", copy: "Proveemos estructuras, galerías, torres de transferencia, chutes, tolvas, poleas, estaciones de rodillos, sistemas de tensado, limpieza de banda, cubiertas, cerramientos y accesorios mecánicos para instalaciones nuevas o existentes." },
-  { n: "03", title: "Port and mining systems", copy: "Desarrollamos sistemas de acopio, recepción y transferencia de materiales, manejo de concentrado de cobre, carbón, granos, litio y otros materiales mineros e industriales, adaptados a las condiciones técnicas de cada operación." },
-  { n: "04", title: "Engineering and project services", copy: "Brindamos ingeniería conceptual, básica y de detalle, diseño mecánico, soporte de compras, fabricación, control de calidad, asistencia en instalación, puesta en marcha, mantenimiento y soporte técnico para proyectos industriales de distinta escala." },
+  { n: "01", slug: "bulk-material-handling-equipment", title: "Bulk material handling equipment", copy: "Diseñamos y suministramos transportadores de banda, pipe conveyors, enclosed conveyors, shuttle conveyors, reversible conveyors y overland conveyors, además de belt feeders, bucket elevators, tripper cars y sistemas móviles o fijos de transferencia." },
+  { n: "02", slug: "conveyor-components", title: "Conveyor components", copy: "Proveemos estructuras, galerías, torres de transferencia, chutes, tolvas, poleas, estaciones de rodillos, sistemas de tensado, limpieza de banda, cubiertas, cerramientos y accesorios mecánicos para instalaciones nuevas o existentes." },
+  { n: "03", slug: "port-and-mining-systems", title: "Port and mining systems", copy: "Desarrollamos sistemas de acopio, recepción y transferencia de materiales, manejo de concentrado de cobre, carbón, granos, litio y otros materiales mineros e industriales, adaptados a las condiciones técnicas de cada operación." },
+  { n: "04", slug: "engineering-and-project-services", title: "Engineering and project services", copy: "Brindamos ingeniería conceptual, básica y de detalle, diseño mecánico, soporte de compras, fabricación, control de calidad, asistencia en instalación, puesta en marcha, mantenimiento y soporte técnico para proyectos industriales de distinta escala." },
 ];
 
 function DoubleActions({ primary, secondary, primaryHref = "#contacto", secondaryHref = "#soluciones", light = false }: { primary: string; secondary: string; primaryHref?: string; secondaryHref?: string; light?: boolean }) {
@@ -37,8 +38,6 @@ function DoubleActions({ primary, secondary, primaryHref = "#contacto", secondar
 }
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   useEffect(() => {
     const items = document.querySelectorAll<HTMLElement>("[data-reveal]");
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("in-view")), { threshold: 0.14 });
@@ -48,19 +47,7 @@ export default function Home() {
 
   return (
     <main>
-      <header className="nav-wrap">
-        <nav className="nav-shell" aria-label="Navegación principal">
-          <a href="#inicio" className="brand" aria-label="KRK — inicio"><img src={`${assetBase}/images/KRK-LOGO-BLANCO-3.png`} alt="KRK Latinoamericana" /></a>
-          <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-            <a href={`${assetBase}/quienes-somos/`} onClick={() => setMenuOpen(false)}>Quiénes somos</a>
-            <a href={`${assetBase}/servicios/`} onClick={() => setMenuOpen(false)}>Productos y servicios</a>
-            <a href="#sectores" onClick={() => setMenuOpen(false)}>Industrias</a>
-            <a href="#experiencia" onClick={() => setMenuOpen(false)}>Experiencia</a>
-          </div>
-          <a className="nav-cta" href="#contacto"><span>Iniciar un proyecto</span><i>↗</i></a>
-          <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menú" aria-expanded={menuOpen}><i /><i /></button>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="inicio">
         <img className="hero-image" src={`${assetBase}/images/PORTADA-006.jpg`} alt="Sistema KRK para transporte de materiales a granel" />
@@ -94,7 +81,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="services section" id="soluciones" data-reveal><div className="container services-grid"><div className="services-intro"><div className="eyebrow"><span /> NUESTROS PRODUCTOS Y SERVICIOS</div><h2>Soluciones integrales para el manejo de <em>materiales a granel.</em></h2><p>Equipos, componentes e ingeniería para sistemas de transporte y manejo de materiales a granel en operaciones industriales, mineras y portuarias.</p><DoubleActions primary="Solicitar asesoramiento" secondary="Ver capacidades" primaryHref="#contacto" secondaryHref="#soluciones" /></div><div className="service-list">{services.map((s) => <article key={s.n}><span>{s.n}</span><div><h3>{s.title}</h3><p>{s.copy}</p></div><b>↗</b></article>)}</div></div></section>
+      <section className="services section" id="soluciones" data-reveal><div className="container services-grid"><div className="services-intro"><div className="eyebrow"><span /> NUESTROS PRODUCTOS Y SERVICIOS</div><h2>Soluciones integrales para el manejo de <em>materiales a granel.</em></h2><p>Equipos, componentes e ingeniería para sistemas de transporte y manejo de materiales a granel en operaciones industriales, mineras y portuarias.</p><DoubleActions primary="Solicitar asesoramiento" secondary="Ver capacidades" primaryHref="#contacto" secondaryHref={`${assetBase}/servicios/`} /></div><div className="service-list">{services.map((s) => <a className="service-entry" href={`${assetBase}/servicios/${s.slug}/`} key={s.n}><span>{s.n}</span><div><h3>{s.title}</h3><p>{s.copy}</p><strong>Ver servicio <i>↗</i></strong></div><b>↗</b></a>)}</div></div></section>
 
       <section className="engineering-banner" data-reveal><img src={`${assetBase}/images/BACK-002.jpg`} alt="Ingeniería y fabricación de KRK" /><div className="banner-shade" /><div className="container banner-content"><div className="eyebrow light"><span /> ENGINEERING MOVEMENT</div><h2>Ingeniería integral para<br /><em>proyectos exigentes.</em></h2><p>KRK integra todas las etapas del proyecto en una misma solución: análisis técnico, ingeniería, fabricación, suministro, montaje y puesta en marcha. Esta visión permite reducir interfaces, ordenar la ejecución y asegurar sistemas confiables para operaciones de largo plazo.</p><DoubleActions primary="Conversemos sobre su proyecto" secondary="Conocer el proceso" primaryHref="#contacto" secondaryHref="#soluciones" light /></div></section>
 
