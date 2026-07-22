@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const clients = [
   { name: "Barrick", file: "barrick.png" },
   { name: "Glencore", file: "glencore.png" },
@@ -48,7 +50,7 @@ export default function Home() {
     <main>
       <header className="nav-wrap">
         <nav className="nav-shell" aria-label="Navegación principal">
-          <a href="#inicio" className="brand" aria-label="KRK — inicio"><img src="/images/KRK-LOGO-BLANCO-3.png" alt="KRK Latinoamericana" /></a>
+          <a href="#inicio" className="brand" aria-label="KRK — inicio"><img src={`${assetBase}/images/KRK-LOGO-BLANCO-3.png`} alt="KRK Latinoamericana" /></a>
           <div className={`nav-links ${menuOpen ? "open" : ""}`}>
             <a href="#empresa" onClick={() => setMenuOpen(false)}>Quiénes somos</a>
             <a href="#soluciones" onClick={() => setMenuOpen(false)}>Productos y servicios</a>
@@ -61,7 +63,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="inicio">
-        <img className="hero-image" src="/images/PORTADA-006.jpg" alt="Sistema KRK para transporte de materiales a granel" />
+        <img className="hero-image" src={`${assetBase}/images/PORTADA-006.jpg`} alt="Sistema KRK para transporte de materiales a granel" />
         <div className="hero-shade" /><div className="hero-grid" />
         <div className="hero-content container">
           <div className="hero-kicker"><span>MOVING WHAT MATTERS</span></div>
@@ -75,7 +77,7 @@ export default function Home() {
 
       <section className="trust" id="experiencia">
         <div className="container trust-head"><span>EMPRESAS QUE CONFÍAN EN KRK</span><span>CLIENTES & PROYECTOS</span></div>
-        <div className="logo-marquee" aria-label="Empresas que confían en KRK"><div className="logo-track">{[...clients, ...clients].map((client, i) => <div className="client-logo" key={`${client.name}-${i}`}><img src={`/logos/${client.file}`} alt={client.name} /></div>)}</div></div>
+        <div className="logo-marquee" aria-label="Empresas que confían en KRK"><div className="logo-track">{[...clients, ...clients].map((client, i) => <div className="client-logo" key={`${client.name}-${i}`}><img src={`${assetBase}/logos/${client.file}`} alt={client.name} /></div>)}</div></div>
       </section>
 
       <section className="intro section" id="empresa" data-reveal>
@@ -94,13 +96,13 @@ export default function Home() {
 
       <section className="services section" id="soluciones" data-reveal><div className="container services-grid"><div className="services-intro"><div className="eyebrow"><span /> NUESTROS PRODUCTOS Y SERVICIOS</div><h2>Soluciones integrales para el manejo de <em>materiales a granel.</em></h2><p>Equipos, componentes e ingeniería para sistemas de transporte y manejo de materiales a granel en operaciones industriales, mineras y portuarias.</p><DoubleActions primary="Solicitar asesoramiento" secondary="Ver capacidades" primaryHref="#contacto" secondaryHref="#soluciones" /></div><div className="service-list">{services.map((s) => <article key={s.n}><span>{s.n}</span><div><h3>{s.title}</h3><p>{s.copy}</p></div><b>↗</b></article>)}</div></div></section>
 
-      <section className="engineering-banner" data-reveal><img src="/images/BACK-002.jpg" alt="Ingeniería y fabricación de KRK" /><div className="banner-shade" /><div className="container banner-content"><div className="eyebrow light"><span /> ENGINEERING MOVEMENT</div><h2>Ingeniería integral para<br /><em>proyectos exigentes.</em></h2><p>KRK integra todas las etapas del proyecto en una misma solución: análisis técnico, ingeniería, fabricación, suministro, montaje y puesta en marcha. Esta visión permite reducir interfaces, ordenar la ejecución y asegurar sistemas confiables para operaciones de largo plazo.</p><DoubleActions primary="Conversemos sobre su proyecto" secondary="Conocer el proceso" primaryHref="#contacto" secondaryHref="#soluciones" light /></div></section>
+      <section className="engineering-banner" data-reveal><img src={`${assetBase}/images/BACK-002.jpg`} alt="Ingeniería y fabricación de KRK" /><div className="banner-shade" /><div className="container banner-content"><div className="eyebrow light"><span /> ENGINEERING MOVEMENT</div><h2>Ingeniería integral para<br /><em>proyectos exigentes.</em></h2><p>KRK integra todas las etapas del proyecto en una misma solución: análisis técnico, ingeniería, fabricación, suministro, montaje y puesta en marcha. Esta visión permite reducir interfaces, ordenar la ejecución y asegurar sistemas confiables para operaciones de largo plazo.</p><DoubleActions primary="Conversemos sobre su proyecto" secondary="Conocer el proceso" primaryHref="#contacto" secondaryHref="#soluciones" light /></div></section>
 
-      <section className="project section" data-reveal><div className="container project-grid"><div className="project-image"><img src="/images/IMG-009.jpg" alt="Sistema transportador de KRK en operación" /><span>CAPACIDAD EN CAMPO / 01</span></div><div className="project-copy"><div className="eyebrow"><span /> FROM CONCEPT TO COMMISSIONING</div><h2>Una solución.<br /><em>Todas las etapas.</em></h2><p>Nuestra experiencia, capacidad técnica y red de fabricación nos permite acompañar a cada cliente con soluciones confiables, competitivas y adaptadas a las exigencias de su operación.</p><dl><div><dt>01</dt><dd>Minería</dd></div><div><dt>02</dt><dd>Agroindustria</dd></div><div><dt>03</dt><dd>Energía e industria</dd></div><div><dt>04</dt><dd>Puertos y terminales</dd></div></dl><DoubleActions primary="Iniciar una conversación" secondary="Ver servicios" primaryHref="#contacto" secondaryHref="#soluciones" /></div></div></section>
+      <section className="project section" data-reveal><div className="container project-grid"><div className="project-image"><img src={`${assetBase}/images/IMG-009.jpg`} alt="Sistema transportador de KRK en operación" /><span>CAPACIDAD EN CAMPO / 01</span></div><div className="project-copy"><div className="eyebrow"><span /> FROM CONCEPT TO COMMISSIONING</div><h2>Una solución.<br /><em>Todas las etapas.</em></h2><p>Nuestra experiencia, capacidad técnica y red de fabricación nos permite acompañar a cada cliente con soluciones confiables, competitivas y adaptadas a las exigencias de su operación.</p><dl><div><dt>01</dt><dd>Minería</dd></div><div><dt>02</dt><dd>Agroindustria</dd></div><div><dt>03</dt><dd>Energía e industria</dd></div><div><dt>04</dt><dd>Puertos y terminales</dd></div></dl><DoubleActions primary="Iniciar una conversación" secondary="Ver servicios" primaryHref="#contacto" secondaryHref="#soluciones" /></div></div></section>
 
       <section className="contact" id="contacto" data-reveal><div className="contact-gridlines" /><div className="contact-glow contact-glow-a" /><div className="contact-glow contact-glow-b" /><div className="contact-beam" /><div className="container contact-grid"><div className="contact-heading"><div className="eyebrow light"><span /> CONTACTANOS</div><h2>Movemos lo que<br /><em>importa.</em></h2><p>Contanos brevemente sobre tu operación o proyecto. Nuestro equipo técnico se pondrá en contacto con vos.</p></div><div className="contact-side"><div className="form-head"><span>INICIAR UNA CONVERSACIÓN</span><b>01 / 04</b></div><form className="contact-form" action="mailto:contactenos@krk.com" method="post" encType="text/plain"><label><span>Nombre y apellido</span><input type="text" name="nombre" autoComplete="name" required placeholder="Tu nombre" /></label><label><span>Empresa</span><input type="text" name="empresa" autoComplete="organization" placeholder="Nombre de la empresa" /></label><div className="form-row"><label><span>Email</span><input type="email" name="email" autoComplete="email" required placeholder="nombre@empresa.com" /></label><label><span>Teléfono</span><input type="tel" name="telefono" autoComplete="tel" placeholder="+54" /></label></div><label><span>¿Cómo podemos ayudarte?</span><textarea name="mensaje" required rows={3} placeholder="Proyecto, operación o necesidad técnica" /></label><div className="form-actions"><button type="submit"><span>Enviar consulta</span><i>↗</i></button><a href="#inicio"><i>↓</i><span>Volver al inicio</span></a></div></form></div></div></section>
 
-      <footer><div className="container footer-top"><div className="footer-brand"><img src="/images/KRK-LOGO-BLANCO-3.png" alt="KRK Latinoamericana" /><p>Ingeniería, fabricación y ejecución de sistemas para transporte de materiales a granel.</p></div><a href="#inicio">VOLVER ARRIBA ↑</a></div><div className="container footer-grid"><div><b>OFICINAS COMERCIALES</b><p>Monroe 5088 (CP1431). Piso 3.<br />Ciudad Autónoma de Buenos Aires, Argentina.<br />Tel +54 11 6841-7800</p></div><div><b>PLANTA INDUSTRIAL</b><p>Av. Nicolás Bruzone 1136 (B1838BHD).<br />Provincia de Buenos Aires, Argentina.</p></div><div><b>NAVEGACIÓN</b><p><a href="#empresa">Quiénes somos</a><br /><a href="#soluciones">Productos y servicios</a><br /><a href="#sectores">Industrias</a></p></div><div><b>PRESENCIA</b><p>Argentina · Chile · Brasil<br />Paraguay · Uruguay</p></div></div><div className="container footer-bottom"><span>© 2026 KRK LATINOAMERICANA S.A.</span><span>MOVING WHAT MATTERS</span></div></footer>
+      <footer><div className="container footer-top"><div className="footer-brand"><img src={`${assetBase}/images/KRK-LOGO-BLANCO-3.png`} alt="KRK Latinoamericana" /><p>Ingeniería, fabricación y ejecución de sistemas para transporte de materiales a granel.</p></div><a href="#inicio">VOLVER ARRIBA ↑</a></div><div className="container footer-grid"><div><b>OFICINAS COMERCIALES</b><p>Monroe 5088 (CP1431). Piso 3.<br />Ciudad Autónoma de Buenos Aires, Argentina.<br />Tel +54 11 6841-7800</p></div><div><b>PLANTA INDUSTRIAL</b><p>Av. Nicolás Bruzone 1136 (B1838BHD).<br />Provincia de Buenos Aires, Argentina.</p></div><div><b>NAVEGACIÓN</b><p><a href="#empresa">Quiénes somos</a><br /><a href="#soluciones">Productos y servicios</a><br /><a href="#sectores">Industrias</a></p></div><div><b>PRESENCIA</b><p>Argentina · Chile · Brasil<br />Paraguay · Uruguay</p></div></div><div className="container footer-bottom"><span>© 2026 KRK LATINOAMERICANA S.A.</span><span>MOVING WHAT MATTERS</span></div></footer>
     </main>
   );
 }
