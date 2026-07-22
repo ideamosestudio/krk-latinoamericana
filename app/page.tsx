@@ -52,8 +52,8 @@ export default function Home() {
         <nav className="nav-shell" aria-label="Navegación principal">
           <a href="#inicio" className="brand" aria-label="KRK — inicio"><img src={`${assetBase}/images/KRK-LOGO-BLANCO-3.png`} alt="KRK Latinoamericana" /></a>
           <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-            <a href="#empresa" onClick={() => setMenuOpen(false)}>Quiénes somos</a>
-            <a href="#soluciones" onClick={() => setMenuOpen(false)}>Productos y servicios</a>
+            <a href={`${assetBase}/quienes-somos/`} onClick={() => setMenuOpen(false)}>Quiénes somos</a>
+            <a href={`${assetBase}/servicios/`} onClick={() => setMenuOpen(false)}>Productos y servicios</a>
             <a href="#sectores" onClick={() => setMenuOpen(false)}>Industrias</a>
             <a href="#experiencia" onClick={() => setMenuOpen(false)}>Experiencia</a>
           </div>
