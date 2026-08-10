@@ -3,9 +3,10 @@
 import { InnerHero, InnerShell, base } from "./InnerShell";
 import { ServiceGallery } from "./ServiceGallery";
 import { ClientLogoStrip } from "./ClientLogoStrip";
+import { ProductCarousel, type ProductImage } from "./ProductCarousel";
 import { selectText, useLanguage, type LocalizedText } from "./LanguageProvider";
 
-export type ProductItem = { title: LocalizedText | string; en: string; es: string; image: string };
+export type ProductItem = { title: LocalizedText | string; en: string; es: string; images: ProductImage[] };
 export type GalleryItem = { file: string; alt: LocalizedText | string };
 
 const galleryImages: GalleryItem[] = [
@@ -40,7 +41,7 @@ export function ServiceDetail({ title, en, es, image, introTitle = { es: "Ingeni
     <section className="detail-intro section" id="contenido"><div className="container detail-editorial"><aside><div className="eyebrow"><span /> {text.capabilities}</div><p>{text.condition}</p></aside><div><h2>{selectText(introTitle, language)}<br /><em>{selectText(introAccent, language)}</em></h2><div className="detail-language-single"><small>{text.overview}</small><p>{overview}</p></div><div className="detail-actions"><a className="detail-cta dark" href={`${base}/#contacto`}>{text.consult} <i>↗</i></a><a className="detail-secondary" href={`${base}/servicios/`}><i>←</i> {text.all}</a></div></div></div></section>
     {items.length > 0 ? <section className="product-catalog" id="equipos"><div className="container catalog-heading"><div className="eyebrow light"><span /> {text.equipment}</div><h2>{text.products}<br /><em>{text.continuous}</em></h2></div><div className="container">{items.map((item, index) => {
       const itemTitle = selectText(item.title, language);
-      return <article className="product-row" key={selectText(item.title, "en")}><div className="product-number">KRK / {String(index + 1).padStart(2, "0")}</div><div className="product-image"><img src={`${base}/images/${item.image}`} alt={itemTitle} /></div><div className="product-text"><small>{text.itemLabel} / {String(index + 1).padStart(2, "0")}</small><h2>{itemTitle}</h2><div className="product-copy-selected"><b>{language.toUpperCase()}</b><p>{item[language]}</p></div></div></article>;
+      return <article className="product-row" key={selectText(item.title, "en")}><div className="product-number">KRK / {String(index + 1).padStart(2, "0")}</div><ProductCarousel images={item.images} title={itemTitle} /><div className="product-text"><small>{text.itemLabel} / {String(index + 1).padStart(2, "0")}</small><h2>{itemTitle}</h2><div className="product-copy-selected"><b>{language.toUpperCase()}</b><p>{item[language]}</p></div></div></article>;
     })}</div></section> : <ServiceGallery images={gallery} />}
     <ClientLogoStrip />
   </InnerShell>;

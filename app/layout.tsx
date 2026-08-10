@@ -4,6 +4,7 @@ import { LanguageProvider } from "./_components/LanguageProvider";
 import "./globals.css";
 import "./language.css";
 import "./experience-visuals.css";
+import "./product-carousel.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
