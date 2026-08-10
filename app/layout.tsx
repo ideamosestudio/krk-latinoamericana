@@ -7,6 +7,8 @@ import "./language.css";
 import "./experience-visuals.css";
 import "./product-carousel.css";
 import "./back-to-top.css";
+import "./premium-navigation.css";
+import "./mobile-ux.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
