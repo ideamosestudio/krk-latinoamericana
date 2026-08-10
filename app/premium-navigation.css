@@ -554,3 +554,19 @@ html.menu-open body {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* Keep the open mobile panel anchored to the viewport, not the glass header. */
+@media (max-width: 900px) {
+  .site-header.menu-is-open .nav-shell {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .site-header.menu-is-open .nav-links {
+    inset: 0;
+    width: 100vw;
+    max-width: none;
+    margin: 0;
+  }
+}
