@@ -26,7 +26,6 @@ export function BackToTopButton() {
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     })}
   >
-    <span>{label}</span>
     <i aria-hidden="true">↑</i>
   </button>;
 }
