@@ -87,7 +87,7 @@ const items: ProductItem[] = [
       { file: "bulk-equipment/tripper-cars-03.webp", caption: "Terminal 6 — Puerto San Martín" },
     ],
     en: "Engineered tripper cars providing accurate and flexible material distribution, maximizing storage capacity and improving the operational efficiency of stockpiles, silos and bulk material storage facilities.",
-    es: "Carros tripper diseñados para proporcionar una distribución precisa y flexible de materiales, maximizando la capacidad de almacenamiento y mejorando la eficiencia operativa de acopios, silos e instalaciones de almacenamiento.",
+    es: "Diseñados para proporcionar una distribución precisa y flexible de materiales, maximizando la capacidad de almacenamiento y mejorando la eficiencia operativa de acopios, silos e instalaciones de almacenamiento de materiales a granel.",
   },
 ];
 
