@@ -570,3 +570,53 @@ html.menu-open body {
     margin: 0;
   }
 }
+
+
+/* Shared mobile menu columns: index, label and action. */
+@media (max-width: 900px) {
+  .site-header .nav-links > .nav-primary-link,
+  .site-header .nav-mobile-contact,
+  .site-header .nav-services > button {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) 34px;
+    column-gap: 12px;
+    padding: 15px 2px;
+    align-items: center;
+    justify-content: normal;
+  }
+
+  .site-header .nav-links > .nav-primary-link::before,
+  .site-header .nav-mobile-contact::before,
+  .site-header .nav-services > button::before {
+    content: attr(data-index);
+    position: static;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    color: #70cef2;
+    font-family: var(--font-geist-mono);
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .12em;
+  }
+
+  .site-header .nav-services::before {
+    display: none;
+    content: none;
+  }
+
+  .site-header .nav-links > .nav-primary-link > span,
+  .site-header .nav-mobile-contact > span,
+  .site-header .nav-services > button > span {
+    grid-column: 2;
+    min-width: 0;
+  }
+
+  .site-header .nav-primary-link > b,
+  .site-header .nav-mobile-contact > b,
+  .site-header .nav-services > button > b {
+    grid-column: 3;
+    justify-self: end;
+  }
+}

@@ -90,7 +90,7 @@ export function SiteHeader() {
           <div className="nav-mobile-intro" aria-hidden="true"><span>{text.navigationLabel}</span><small>2001 — 2026</small></div>
           <a className="nav-primary-link" data-index="01" href={`${base}/quienes-somos/`} onClick={close}><span>{text.about}</span><b aria-hidden="true">↗</b></a>
           <div className={`nav-services ${servicesOpen ? "is-open" : ""}`} data-index="02" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-            <button type="button" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen}><span>{text.services}</span><b aria-hidden="true">+</b></button>
+            <button type="button" data-index="02" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen}><span>{text.services}</span><b aria-hidden="true">+</b></button>
             <div className="nav-dropdown">
               <a className="dropdown-overview" href={`${base}/servicios/`} onClick={close}><span>{text.allServices}</span><b aria-hidden="true">↗</b></a>
               {serviceLinks.map((service) => <a href={`${base}/servicios/${service.slug}/`} onClick={close} key={service.slug}><small>{service.n}</small><span>{service[language]}</span><b aria-hidden="true">↗</b></a>)}
