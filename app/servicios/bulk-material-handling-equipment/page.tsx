@@ -18,8 +18,8 @@ const items: ProductItem[] = [
       { file: "bulk-equipment/belt-conveyors-01.webp", caption: "Molinos Agro — San Lorenzo" },
       { file: "bulk-equipment/belt-conveyors-02.webp", caption: "YPF — Vaca Muerta" },
     ],
-    es: lorem,
-    en: lorem,
+    en: "Engineered conveyor systems for reliable and efficient bulk material transportation, tailored to meet the operational and environmental requirements of each project.",
+    es: "Sistemas de cintas transportadoras diseñados para brindar un transporte de materiales a granel confiable y eficiente, adaptados a los requerimientos operativos y ambientales de cada proyecto.",
   },
   {
     title: { es: "Alimentadores por banda", en: "Belt Feeders" },
