@@ -654,3 +654,15 @@ html.menu-open body {
     min-height: 50px;
   }
 }
+
+
+/* Reset the desktop dropdown offset on mobile. */
+@media (max-width: 900px) {
+  .site-header .nav-services .nav-dropdown {
+    left: 0;
+    right: auto;
+    width: 100%;
+    margin: 0;
+    transform: none !important;
+  }
+}
