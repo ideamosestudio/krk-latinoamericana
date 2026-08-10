@@ -588,8 +588,12 @@ select {
   }
 
   .product-carousel-controls {
-    right: 12px;
     top: 12px;
+    right: 12px;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    height: auto;
   }
 
   .product-carousel-controls button {
