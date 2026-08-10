@@ -76,8 +76,8 @@ const items: ProductItem[] = [
       { file: "bulk-equipment/pipe-conveyors-02.webp", caption: "PVSA — Quintero, Chile" },
       { file: "bulk-equipment/pipe-conveyors-03.webp", caption: "Renova — Timbúes" },
     ],
-    es: lorem,
-    en: lorem,
+    en: "Engineered for complex routes, Pipe Conveyors allow continuous material transportation over challenging terrain while reducing transfer stations, optimizing energy efficiency and minimizing dust emissions, spillage and environmental impact.",
+    es: "Diseñados para recorridos complejos, los Pipe Conveyors permiten el transporte continuo de materiales a través de terrenos desafiantes, reduciendo estaciones de transferencia, optimizando la eficiencia energética y minimizando las emisiones de polvo, los derrames de material y el impacto ambiental.",
   },
   {
     title: { es: "Tripper Cars", en: "Tripper Cars" },
