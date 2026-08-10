@@ -1,0 +1,87 @@
+.experience-visual {
+  position: absolute;
+  z-index: 1;
+  top: 54px;
+  left: 28px;
+  right: 28px;
+  height: 220px;
+  pointer-events: none;
+  color: #75d3ff;
+}
+.experience-visual svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.experience-visual text { font-family: var(--font-geist-mono), monospace; }
+.visual-kicker { fill: #61717a; font-size: 8px; font-weight: 650; letter-spacing: 1.7px; }
+.visual-caption { fill: #647883; font-size: 7px; font-weight: 600; letter-spacing: 1.2px; }
+.visual-label { fill: #758690; font-size: 8px; font-weight: 600; letter-spacing: 1px; }
+.visual-label-active { fill: #a9e3ff; }
+.sector-card .card-top { z-index: 3; }
+.sector-card .sector-copy-factual { z-index: 3; }
+
+/* 01 — trayectoria */
+.timeline-years { fill: rgba(117,211,255,.24); font-size: 52px; font-weight: 620; letter-spacing: -4px; }
+.timeline-base { stroke: rgba(158,184,198,.2); stroke-width: 1; }
+.timeline-progress { stroke: #75d3ff; stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 5px rgba(117,211,255,.7)); animation: timelineDraw 6s cubic-bezier(.65,0,.35,1) infinite; }
+.timeline-milestone line { stroke: rgba(158,184,198,.28); stroke-width: 1; }
+.timeline-milestone circle { fill: #101b22; stroke: #75d3ff; stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: milestonePulse 6s ease-in-out infinite; }
+.timeline-milestone.milestone-2 circle { animation-delay: .6s; }.timeline-milestone.milestone-3 circle { animation-delay: 1.2s; }.timeline-milestone.milestone-4 circle { animation-delay: 1.8s; }.timeline-milestone.milestone-5 circle { animation-delay: 2.4s; }
+.timeline-runner { fill: #bceaff; filter: drop-shadow(0 0 8px #5fc9ff); transform: translateX(0); animation: timelineRunner 6s cubic-bezier(.65,0,.35,1) infinite; }
+.timeline-rise { fill: none; stroke: rgba(117,211,255,.25); stroke-width: 1; stroke-dasharray: 4 7; }
+
+/* 02 — disciplinas */
+.discipline-links line { stroke: rgba(132,184,211,.32); stroke-width: 1.2; stroke-dasharray: 5 7; animation: networkFlow 7s linear infinite; }
+.discipline-node circle { fill: rgba(9,19,25,.92); stroke: rgba(117,211,255,.45); stroke-width: 1; }
+.discipline-node text { fill: #a7dff8; font-size: 8px; font-weight: 700; letter-spacing: 1px; text-anchor: middle; }
+.discipline-node { transform-box: fill-box; transform-origin: center; animation: disciplinePulse 5s ease-in-out infinite; }
+.discipline-node.node-2 { animation-delay: .7s; }.discipline-node.node-3 { animation-delay: 1.4s; }.discipline-node.node-4 { animation-delay: 2.1s; }.discipline-node.node-5 { animation-delay: 2.8s; }
+.discipline-core text { fill: #e8f8ff; font-size: 11px; font-weight: 750; letter-spacing: 1px; text-anchor: middle; }
+.core-ring { fill: none; stroke: rgba(117,211,255,.34); stroke-width: 1; stroke-dasharray: 4 6; animation: coreRotate 18s linear infinite; transform-origin: 220px 105px; }
+.core-disc { fill: rgba(54,139,184,.25); stroke: rgba(117,211,255,.66); stroke-width: 1.2; animation: coreBreath 4s ease-in-out infinite; transform-origin: 220px 105px; }
+.signal { fill: #c8efff; filter: drop-shadow(0 0 7px #5fc9ff); transform-box: fill-box; transform-origin: center; animation: signalTravel 4s ease-in-out infinite; }
+.signal-2 { animation-delay: .8s; }.signal-3 { animation-delay: 1.6s; }.signal-4 { animation-delay: 2.4s; }
+
+/* 03 — ejecución */
+.process-base { stroke: rgba(158,184,198,.22); stroke-width: 2; }
+.process-flow { stroke: #75d3ff; stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 5px rgba(117,211,255,.65)); animation: processDraw 7s ease-in-out infinite; }
+.stage-ring { fill: #091117; stroke: rgba(117,211,255,.45); stroke-width: 1; }
+.stage-dot { fill: rgba(117,211,255,.16); }
+.stage-number { fill: #9cdefb; font-size: 7px; font-weight: 700; text-anchor: middle; }
+.stage-label { fill: #8598a2; font-size: 7px; font-weight: 650; letter-spacing: .5px; text-anchor: middle; }
+.stage-guide { stroke: rgba(158,184,198,.28); stroke-width: 1; }
+.process-stage { transform-box: fill-box; transform-origin: center; animation: processStage 7s ease-in-out infinite; }
+.process-stage.stage-2 { animation-delay: .6s; }.process-stage.stage-3 { animation-delay: 1.2s; }.process-stage.stage-4 { animation-delay: 1.8s; }.process-stage.stage-5 { animation-delay: 2.4s; }
+.process-runner { fill: #d5f4ff; filter: drop-shadow(0 0 8px #5fc9ff); animation: processRunner 7s ease-in-out infinite; }
+
+/* 04 — presencia regional */
+.map-coordinate-grid line { stroke: rgba(126,158,174,.12); stroke-width: 1; stroke-dasharray: 3 8; }
+.south-america { fill: rgba(51,130,170,.16); stroke: rgba(117,211,255,.48); stroke-width: 1.4; }
+.map-route { fill: none; stroke: #75d3ff; stroke-width: 1.4; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 4px rgba(117,211,255,.65)); animation: mapRoute 6s ease-in-out infinite; }
+.map-dot { fill: #d5f4ff; filter: drop-shadow(0 0 6px #5fc9ff); }
+.map-ring { fill: none; stroke: rgba(117,211,255,.55); stroke-width: 1; transform-box: fill-box; transform-origin: center; animation: mapPulse 4.5s ease-out infinite; }
+.map-point.point-2 .map-ring { animation-delay: .5s; }.map-point.point-3 .map-ring { animation-delay: 1s; }.map-point.point-4 .map-ring { animation-delay: 1.5s; }.map-point.point-5 .map-ring { animation-delay: 2s; }
+.map-point text { fill: #9ddcf8; font-size: 7px; font-weight: 700; letter-spacing: .8px; }
+.map-count { fill: rgba(117,211,255,.22); font-size: 52px; font-weight: 620; letter-spacing: -3px; }
+
+@keyframes timelineDraw { 0%,12%{stroke-dashoffset:1} 64%,88%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
+@keyframes timelineRunner { 0%,12%{transform:translateX(0);opacity:0} 18%{opacity:1} 64%,88%{transform:translateX(380px);opacity:1} 100%{transform:translateX(380px);opacity:0} }
+@keyframes milestonePulse { 0%,35%,100%{fill:#101b22;transform:scale(1)} 45%{fill:#75d3ff;transform:scale(1.55)} }
+@keyframes networkFlow { to{stroke-dashoffset:-120} }
+@keyframes disciplinePulse { 0%,68%,100%{opacity:.64;transform:scale(1)} 76%{opacity:1;transform:scale(1.08)} }
+@keyframes coreRotate { to{transform:rotate(360deg)} }
+@keyframes coreBreath { 50%{transform:scale(1.08);fill:rgba(54,139,184,.42)} }
+@keyframes signalTravel { 0%,100%{opacity:.25;transform:scale(.7)} 50%{opacity:1;transform:scale(1.45)} }
+@keyframes processDraw { 0%,10%{stroke-dashoffset:1} 72%,90%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
+@keyframes processStage { 0%,58%,100%{opacity:.52;transform:scale(1)} 68%{opacity:1;transform:scale(1.12)} }
+@keyframes processRunner { 0%,10%{transform:translateX(0);opacity:0} 16%{opacity:1} 72%,90%{transform:translateX(364px);opacity:1} 100%{transform:translateX(364px);opacity:0} }
+@keyframes mapRoute { 0%,12%{stroke-dashoffset:1} 70%,90%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
+@keyframes mapPulse { 0%,44%{opacity:0;transform:scale(.55)} 55%{opacity:1} 82%,100%{opacity:0;transform:scale(1.65)} }
+
+@media(max-width:560px){
+  .experience-visual{top:52px;left:16px;right:16px;height:188px}
+  .visual-caption{display:none}
+  .stage-label{font-size:6.4px}
+}
+@media(prefers-reduced-motion:reduce){
+  .experience-visual *{animation:none!important}
+  .timeline-progress,.process-flow,.map-route{stroke-dashoffset:0}
+  .timeline-runner,.process-runner{display:none}
+}
