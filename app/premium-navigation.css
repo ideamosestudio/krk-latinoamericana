@@ -620,3 +620,37 @@ html.menu-open body {
     justify-self: end;
   }
 }
+
+
+/* Keep the services accordion usable inside short mobile viewports. */
+@media (max-width: 900px) {
+  .site-header .nav-services {
+    scroll-margin-top: 96px;
+  }
+
+  .site-header .nav-services.is-open .nav-dropdown {
+    max-height: min(44dvh, 340px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(112, 206, 242, .55) rgba(255, 255, 255, .06);
+  }
+
+  .site-header .nav-services.is-open .nav-dropdown::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .site-header .nav-services.is-open .nav-dropdown::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .06);
+  }
+
+  .site-header .nav-services.is-open .nav-dropdown::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background: rgba(112, 206, 242, .55);
+  }
+
+  .site-header .nav-dropdown a {
+    min-height: 50px;
+  }
+}

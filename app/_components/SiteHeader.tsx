@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage, type Language } from "./LanguageProvider";
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -46,6 +46,7 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const text = copy[language];
 
   useEffect(() => {
@@ -80,6 +81,18 @@ export function SiteHeader() {
     close();
   };
 
+  const toggleServices = () => {
+    const nextOpen = !servicesOpen;
+    setServicesOpen(nextOpen);
+
+    if (nextOpen && window.innerWidth <= 900) {
+      window.requestAnimationFrame(() => {
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        servicesRef.current?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+      });
+    }
+  };
+
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""} ${menuOpen ? "menu-is-open" : ""}`}>
       <nav className="nav-shell" aria-label={text.navigation}>
@@ -89,8 +102,8 @@ export function SiteHeader() {
         <div className={`nav-links ${menuOpen ? "open" : ""}`} id="primary-navigation">
           <div className="nav-mobile-intro" aria-hidden="true"><span>{text.navigationLabel}</span><small>2001 — 2026</small></div>
           <a className="nav-primary-link" data-index="01" href={`${base}/quienes-somos/`} onClick={close}><span>{text.about}</span><b aria-hidden="true">↗</b></a>
-          <div className={`nav-services ${servicesOpen ? "is-open" : ""}`} data-index="02" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-            <button type="button" data-index="02" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen}><span>{text.services}</span><b aria-hidden="true">+</b></button>
+          <div ref={servicesRef} className={`nav-services ${servicesOpen ? "is-open" : ""}`} data-index="02" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+            <button type="button" data-index="02" onClick={toggleServices} aria-expanded={servicesOpen}><span>{text.services}</span><b aria-hidden="true">+</b></button>
             <div className="nav-dropdown">
               <a className="dropdown-overview" href={`${base}/servicios/`} onClick={close}><span>{text.allServices}</span><b aria-hidden="true">↗</b></a>
               {serviceLinks.map((service) => <a href={`${base}/servicios/${service.slug}/`} onClick={close} key={service.slug}><small>{service.n}</small><span>{service[language]}</span><b aria-hidden="true">↗</b></a>)}
