@@ -57,9 +57,10 @@
 .map-route { fill: none; stroke: #75d3ff; stroke-width: 1.4; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 4px rgba(117,211,255,.65)); animation: mapRoute 6s ease-in-out infinite; }
 .map-dot { fill: #d5f4ff; filter: drop-shadow(0 0 6px #5fc9ff); }
 .map-ring { fill: none; stroke: rgba(117,211,255,.55); stroke-width: 1; transform-box: fill-box; transform-origin: center; animation: mapPulse 4.5s ease-out infinite; }
-.map-point.point-2 .map-ring { animation-delay: .5s; }.map-point.point-3 .map-ring { animation-delay: 1s; }.map-point.point-4 .map-ring { animation-delay: 1.5s; }.map-point.point-5 .map-ring { animation-delay: 2s; }
+.map-point.point-2 .map-ring { animation-delay: .35s; }.map-point.point-3 .map-ring { animation-delay: .7s; }.map-point.point-4 .map-ring { animation-delay: 1.05s; }.map-point.point-5 .map-ring { animation-delay: 1.4s; }.map-point.point-6 .map-ring { animation-delay: 1.75s; }.map-point.point-7 .map-ring { animation-delay: 2.1s; }
 .map-point text { fill: #9ddcf8; font-size: 7px; font-weight: 700; letter-spacing: .8px; }
 .map-count { fill: rgba(117,211,255,.22); font-size: 52px; font-weight: 620; letter-spacing: -3px; }
+.map-count-latam { font-size: 34px; letter-spacing: -1.8px; }
 
 @keyframes timelineDraw { 0%,12%{stroke-dashoffset:1} 64%,88%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
 @keyframes timelineRunner { 0%,12%{transform:translateX(0);opacity:0} 18%{opacity:1} 64%,88%{transform:translateX(380px);opacity:1} 100%{transform:translateX(380px);opacity:0} }

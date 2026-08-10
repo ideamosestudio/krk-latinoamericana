@@ -51,8 +51,8 @@ export function ExperienceVisual({ type }: { type: string }) {
     <path className="south-america" d="M178 19 C196 14 221 19 239 28 C252 35 258 46 267 55 C277 66 275 78 267 89 C259 100 249 108 246 120 C242 135 230 146 222 159 C214 172 207 190 198 201 C191 196 190 181 187 170 C183 157 177 146 176 133 C175 120 168 111 160 102 C151 91 145 79 144 67 C143 55 151 45 159 37 C167 31 170 24 178 19 Z" />
     <path className="map-route" pathLength="1" d="M202 158 L180 139 L211 121 L235 91 M211 121 L222 153" />
     {[
-      [202, 158, "AR", "point-1"], [180, 139, "CL", "point-2"], [211, 121, "PY", "point-3"], [235, 91, "BR", "point-4"], [222, 153, "UY", "point-5"],
-    ].map(([x, y, code, className]) => <g className={`map-point ${className}`} key={code}><circle className="map-ring" cx={x} cy={y} r="12" /><circle className="map-dot" cx={x} cy={y} r="4" /><text x={Number(x) + 13} y={Number(y) + 4}>{code}</text></g>)}
-    <text className="map-count" x="400" y="76" textAnchor="end">05</text><text className="visual-caption" x="400" y="93" textAnchor="end">REGIONAL MARKETS</text>
+      [202, 158, "point-1"], [180, 139, "point-2"], [211, 121, "point-3"], [235, 91, "point-4"], [222, 153, "point-5"], [218, 70, "point-6"], [188, 105, "point-7"],
+    ].map(([x, y, className]) => <g className={`map-point ${className}`} key={className}><circle className="map-ring" cx={x} cy={y} r="12" /><circle className="map-dot" cx={x} cy={y} r="4" /></g>)}
+    <text className="map-count map-count-latam" x="400" y="76" textAnchor="end">LATAM</text><text className="visual-caption" x="400" y="93" textAnchor="end">REGIONAL REACH</text>
   </svg></div>;
 }
