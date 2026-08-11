@@ -25,8 +25,8 @@ const items: ProductItem[] = [
     images: [
       { file: "conveyor-components/conveyor-pulleys-01.webp", caption: { es: "Poleas para transportadores", en: "Conveyor pulleys" } },
     ],
-    es: lorem,
-    en: lorem,
+    es: "Soluciones completas en poleas para cintas transportadoras, adaptadas a los requerimientos de cada aplicación. Combinamos ingeniería especializada con tecnologías ampliamente probadas para garantizar un funcionamiento confiable, eficiente y de larga vida útil.",
+    en: "Complete conveyor pulley solutions tailored to each application, combining engineering expertise with proven technologies to ensure reliable, efficient and long-lasting conveyor performance.",
   },
   {
     title: { es: "Estructuras para transportadores", en: "Conveyor Structures" },
