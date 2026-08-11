@@ -43,8 +43,8 @@ const items: ProductItem[] = [
     images: [
       { file: "port-mining-systems/receiving-transfer-01.webp", caption: "Pier Doce — Necochea" },
     ],
-    es: lorem,
-    en: lorem,
+    es: "Instalaciones integradas de recepción y transferencia para el manejo de materiales a granel, diseñadas para optimizar el flujo del material desde la descarga hasta el transporte. Nuestras soluciones combinan ingeniería especializada, equipos confiables y layouts eficientes para aplicaciones mineras, portuarias, industriales y agroindustriales.",
+    en: "Integrated receiving and transfer facilities for bulk material handling, designed to optimize material flow from unloading to conveying. Our solutions combine specialized engineering, reliable equipment and efficient layouts for mining, port, industrial and agro-processing applications.",
   },
 ];
 
