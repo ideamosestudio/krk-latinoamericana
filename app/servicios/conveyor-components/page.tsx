@@ -4,12 +4,12 @@ const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do e
 
 const items: ProductItem[] = [
   {
-    title: { es: "Sistemas de limpieza de cintas", en: "Belt Cleaning Systems" },
+    title: { es: "Soluciones de limpieza de bandas", en: "Belt Cleaning Solutions" },
     images: [
       { file: "conveyor-components/belt-cleaning-systems-01.webp", caption: { es: "Cepillo en V — Cintas móviles", en: "V-plow cleaner — Mobile conveyors" } },
     ],
-    es: lorem,
-    en: lorem,
+    es: "Soluciones completas para la limpieza de bandas transportadoras, diseñadas para mejorar el desempeño del sistema mediante la reducción del material adherido, la disminución de los requerimientos de mantenimiento y la protección de la banda y sus componentes. Disponibles para una amplia variedad de aplicaciones de manejo de materiales a granel.",
+    en: "Complete belt cleaning solutions designed to improve conveyor performance by minimizing material carryback, reducing maintenance requirements and protecting belts and conveyor components. Available for a wide range of bulk material handling applications.",
   },
   {
     title: { es: "Chutes y tolvas", en: "Chutes and Hoppers" },
