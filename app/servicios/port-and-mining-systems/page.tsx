@@ -8,16 +8,16 @@ const items: ProductItem[] = [
     images: [
       { file: "port-mining-systems/grain-handling-01.webp", caption: "Renova — Timbúes" },
     ],
-    es: lorem,
-    en: lorem,
+    es: "Sistemas integrales para el manejo de granos diseñados para maximizar la eficiencia operativa, preservar la calidad del producto y garantizar un flujo confiable del material. Nuestras soluciones abarcan la recepción, el transporte, el almacenamiento, la recuperación y la carga a buques o camiones, adaptándose a los requerimientos operativos de terminales y plantas de procesamiento.",
+    en: "Integrated grain handling systems engineered to maximize operational efficiency, product integrity and reliable material flow. Our solutions cover receiving, conveying, storage, reclaim and ship or truck loading, tailored to the operational requirements of terminals and processing facilities.",
   },
   {
     title: { es: "Sistemas de manejo de litio y materiales mineros", en: "Lithium and Mining Material Handling Systems" },
     images: [
       { file: "port-mining-systems/lithium-mining-01.webp", caption: "Minera EXAR — Jujuy" },
     ],
-    es: lorem,
-    en: lorem,
+    es: "Sistemas integrales de manejo de materiales para operaciones mineras, destinados al transporte y transferencia de litio, concentrados de cobre y otros minerales a granel. Nuestras soluciones combinan ingeniería especializada, equipos confiables y tecnologías probadas para responder a las exigencias operativas de las instalaciones mineras modernas.",
+    en: "Integrated bulk material handling systems for mining operations, supporting the transportation and transfer of lithium, copper concentrates and other bulk minerals. Our solutions combine specialized engineering, reliable equipment and proven technologies to meet the operational demands of modern mining facilities.",
   },
   {
     title: { es: "Sistema de manipuleo de carbón", en: "Coal Handling System" },
