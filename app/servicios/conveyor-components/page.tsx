@@ -4,21 +4,14 @@ const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do e
 
 const items: ProductItem[] = [
   {
-    title: { es: "Soluciones de limpieza de bandas", en: "Belt Cleaning Solutions" },
+    title: { es: "Rodillos y Soporte de rodillos", en: "Idlers and Idler Frames" },
     images: [
-      { file: "conveyor-components/belt-cleaning-systems-01.webp", caption: { es: "Cepillo en V — Cintas móviles", en: "V-plow cleaner — Mobile conveyors" } },
+      { file: "conveyor-components/idlers-frames-01.webp", caption: { es: "Rodillos y soporte de rodillos — Foto 02", en: "Idlers and frames — Photo 02" } },
+      { file: "conveyor-components/idlers-frames-02.webp", caption: { es: "Rodillos y soporte de rodillos — Foto 09", en: "Idlers and frames — Photo 09" } },
+      { file: "conveyor-components/idlers-frames-03.webp", caption: { es: "Rodillos y soporte de rodillos", en: "Idlers and frames" } },
     ],
-    es: "Soluciones completas para la limpieza de bandas transportadoras, diseñadas para mejorar el desempeño del sistema mediante la reducción del material adherido, la disminución de los requerimientos de mantenimiento y la protección de la banda y sus componentes. Disponibles para una amplia variedad de aplicaciones de manejo de materiales a granel.",
-    en: "Complete belt cleaning solutions designed to improve conveyor performance by minimizing material carryback, reducing maintenance requirements and protecting belts and conveyor components. Available for a wide range of bulk material handling applications.",
-  },
-  {
-    title: { es: "Chutes de transferencia y Tolvas", en: "Transfer Chutes and Hoppers" },
-    images: [
-      { file: "conveyor-components/chutes-hoppers-01.webp", caption: "YCRT — Río Turbio" },
-      { file: "conveyor-components/chutes-hoppers-02.webp", caption: "YPF — Añelo" },
-    ],
-    es: "Chutes de transferencia y tolvas diseñados para optimizar el flujo del material, mejorar la alimentación de los transportadores y minimizar el desgaste, la generación de polvo y los requerimientos de mantenimiento. Cada solución se adapta a las características del material transportado y a los requerimientos operativos de cada proyecto.",
-    en: "Engineered transfer chutes and hoppers designed to optimize material flow, improve conveyor loading and minimize wear, dust generation and maintenance requirements. Each solution is tailored to the characteristics of the conveyed material and the operational requirements of the project.",
+    es: "Amplia gama de rodillos y estaciones para cintas transportadoras diseñados para aplicaciones mineras, portuarias, industriales y agroindustriales. Fabricados de acuerdo con los estándares CEMA, nuestra línea de productos incluye rodillos de carga, retorno, impacto, autocentrantes y especiales, junto con una completa gama de estaciones diseñadas para garantizar un funcionamiento confiable, una prolongada vida útil y bajos requerimientos de mantenimiento.",
+    en: "Complete range of conveyor idlers and idler frames engineered for mining, port, industrial and agro-processing applications. Manufactured in accordance with CEMA standards, our product portfolio includes carrying, return, impact, training and special idlers, together with a full range of idler frames designed to ensure reliable operation, long service life and low maintenance.",
   },
   {
     title: { es: "Poleas para transportadores", en: "Conveyor Pulleys" },
@@ -40,14 +33,21 @@ const items: ProductItem[] = [
     en: "Integrated steel structures for bulk material handling systems, including conveyor galleries, transfer towers, trusses, tie rods and custom supporting steelwork. Designed to integrate seamlessly with each conveyor system while ensuring structural reliability, safe access and long-term performance.",
   },
   {
-    title: { es: "Rodillos y soporte de rodillos", en: "Idlers and Idler Frames" },
+    title: { es: "Soluciones de limpieza de bandas", en: "Belt Cleaning Solutions" },
     images: [
-      { file: "conveyor-components/idlers-frames-01.webp", caption: { es: "Rodillos y soporte de rodillos — Foto 02", en: "Idlers and frames — Photo 02" } },
-      { file: "conveyor-components/idlers-frames-02.webp", caption: { es: "Rodillos y soporte de rodillos — Foto 09", en: "Idlers and frames — Photo 09" } },
-      { file: "conveyor-components/idlers-frames-03.webp", caption: { es: "Rodillos y soporte de rodillos", en: "Idlers and frames" } },
+      { file: "conveyor-components/belt-cleaning-systems-01.webp", caption: { es: "Cepillo en V — Cintas móviles", en: "V-plow cleaner — Mobile conveyors" } },
     ],
-    es: "Amplia gama de rodillos y estaciones para cintas transportadoras diseñados para aplicaciones mineras, portuarias, industriales y agroindustriales. Fabricados de acuerdo con los estándares CEMA, nuestra línea de productos incluye rodillos de carga, retorno, impacto, autocentrantes y especiales, junto con una completa gama de estaciones diseñadas para garantizar un funcionamiento confiable, una prolongada vida útil y bajos requerimientos de mantenimiento.",
-    en: "Complete range of conveyor idlers and idler frames engineered for mining, port, industrial and agro-processing applications. Manufactured in accordance with CEMA standards, our product portfolio includes carrying, return, impact, training and special idlers, together with a full range of idler frames designed to ensure reliable operation, long service life and low maintenance.",
+    es: "Soluciones completas para la limpieza de bandas transportadoras, diseñadas para mejorar el desempeño del sistema mediante la reducción del material adherido, la disminución de los requerimientos de mantenimiento y la protección de la banda y sus componentes. Disponibles para una amplia variedad de aplicaciones de manejo de materiales a granel.",
+    en: "Complete belt cleaning solutions designed to improve conveyor performance by minimizing material carryback, reducing maintenance requirements and protecting belts and conveyor components. Available for a wide range of bulk material handling applications.",
+  },
+  {
+    title: { es: "Chutes de transferencia y Tolvas", en: "Transfer Chutes and Hoppers" },
+    images: [
+      { file: "conveyor-components/chutes-hoppers-01.webp", caption: "YCRT — Río Turbio" },
+      { file: "conveyor-components/chutes-hoppers-02.webp", caption: "YPF — Añelo" },
+    ],
+    es: "Chutes de transferencia y tolvas diseñados para optimizar el flujo del material, mejorar la alimentación de los transportadores y minimizar el desgaste, la generación de polvo y los requerimientos de mantenimiento. Cada solución se adapta a las características del material transportado y a los requerimientos operativos de cada proyecto.",
+    en: "Engineered transfer chutes and hoppers designed to optimize material flow, improve conveyor loading and minimize wear, dust generation and maintenance requirements. Each solution is tailored to the characteristics of the conveyed material and the operational requirements of the project.",
   },
 ];
 
