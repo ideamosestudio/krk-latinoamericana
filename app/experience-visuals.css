@@ -51,17 +51,15 @@
 .process-stage.stage-2 { animation-delay: .6s; }.process-stage.stage-3 { animation-delay: 1.2s; }.process-stage.stage-4 { animation-delay: 1.8s; }.process-stage.stage-5 { animation-delay: 2.4s; }
 .process-runner { fill: #d5f4ff; filter: drop-shadow(0 0 8px #5fc9ff); animation: processRunner 7s ease-in-out infinite; }
 
-/* 04 — presencia regional */
-.map-coordinate-grid line { stroke: rgba(126,158,174,.12); stroke-width: 1; stroke-dasharray: 3 8; }
-.south-america { fill: rgba(51,130,170,.16); stroke: rgba(117,211,255,.48); stroke-width: 1.4; }
-.map-route { fill: none; stroke: #75d3ff; stroke-width: 1.4; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 4px rgba(117,211,255,.65)); animation: mapRoute 6s ease-in-out infinite; }
-.map-dot { fill: #d5f4ff; filter: drop-shadow(0 0 6px #5fc9ff); }
-.map-ring { fill: none; stroke: rgba(117,211,255,.55); stroke-width: 1; transform-box: fill-box; transform-origin: center; animation: mapPulse 4.5s ease-out infinite; }
-.map-point.point-2 .map-ring { animation-delay: .35s; }.map-point.point-3 .map-ring { animation-delay: .7s; }.map-point.point-4 .map-ring { animation-delay: 1.05s; }.map-point.point-5 .map-ring { animation-delay: 1.4s; }.map-point.point-6 .map-ring { animation-delay: 1.75s; }.map-point.point-7 .map-ring { animation-delay: 2.1s; }
-.map-point text { fill: #9ddcf8; font-size: 7px; font-weight: 700; letter-spacing: .8px; }
-.map-count { fill: rgba(117,211,255,.22); font-size: 52px; font-weight: 620; letter-spacing: -3px; }
-.map-count-latam { font-size: 34px; letter-spacing: -1.8px; }
-
+/* 04 — proyectos ejecutados */
+.project-grid-lines line { stroke: rgba(126,158,174,.13); stroke-width: 1; stroke-dasharray: 3 8; }
+.project-route { fill: none; stroke: #75d3ff; stroke-width: 1.5; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 4px rgba(117,211,255,.65)); animation: projectRoute 6s ease-in-out infinite; }
+.project-ring { fill: none; stroke: rgba(117,211,255,.55); stroke-width: 1; transform-box: fill-box; transform-origin: center; animation: projectPulse 4.8s ease-out infinite; }
+.project-dot { fill: #d5f4ff; filter: drop-shadow(0 0 6px #5fc9ff); }
+.project-node text { fill: #86a0ac; font-size: 7px; font-weight: 650; letter-spacing: .6px; }
+.project-node-2 .project-ring { animation-delay: .45s; }.project-node-3 .project-ring { animation-delay: .9s; }.project-node-4 .project-ring { animation-delay: 1.35s; }.project-node-5 .project-ring { animation-delay: 1.8s; }.project-node-6 .project-ring { animation-delay: 2.25s; }
+.project-count { fill: rgba(117,211,255,.25); font-size: 48px; font-weight: 620; letter-spacing: -3px; }
+.project-runner { fill: #d5f4ff; filter: drop-shadow(0 0 8px #5fc9ff); animation: projectRunner 6s ease-in-out infinite; }
 @keyframes timelineDraw { 0%,12%{stroke-dashoffset:1} 64%,88%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
 @keyframes timelineRunner { 0%,12%{transform:translateX(0);opacity:0} 18%{opacity:1} 64%,88%{transform:translateX(380px);opacity:1} 100%{transform:translateX(380px);opacity:0} }
 @keyframes milestonePulse { 0%,35%,100%{fill:#101b22;transform:scale(1)} 45%{fill:#75d3ff;transform:scale(1.55)} }
@@ -73,8 +71,9 @@
 @keyframes processDraw { 0%,10%{stroke-dashoffset:1} 72%,90%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
 @keyframes processStage { 0%,58%,100%{opacity:.52;transform:scale(1)} 68%{opacity:1;transform:scale(1.12)} }
 @keyframes processRunner { 0%,10%{transform:translateX(0);opacity:0} 16%{opacity:1} 72%,90%{transform:translateX(364px);opacity:1} 100%{transform:translateX(364px);opacity:0} }
-@keyframes mapRoute { 0%,12%{stroke-dashoffset:1} 70%,90%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
-@keyframes mapPulse { 0%,44%{opacity:0;transform:scale(.55)} 55%{opacity:1} 82%,100%{opacity:0;transform:scale(1.65)} }
+@keyframes projectRoute { 0%,12%{stroke-dashoffset:1} 70%,90%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
+@keyframes projectPulse { 0%,44%{opacity:0;transform:scale(.55)} 55%{opacity:1} 82%,100%{opacity:0;transform:scale(1.65)} }
+@keyframes projectRunner { 0%,10%{opacity:0;transform:translate(0,0)} 16%{opacity:1} 28%{transform:translate(63px,-39px)} 42%{transform:translate(128px,3px)} 56%{transform:translate(193px,-54px)} 70%{transform:translate(260px,-5px)} 84%,92%{opacity:1;transform:translate(356px,-43px)} 100%{opacity:0;transform:translate(356px,-43px)} }
 
 @media(max-width:560px){
   .experience-visual{top:52px;left:16px;right:16px;height:188px}
@@ -83,6 +82,6 @@
 }
 @media(prefers-reduced-motion:reduce){
   .experience-visual *{animation:none!important}
-  .timeline-progress,.process-flow,.map-route{stroke-dashoffset:0}
-  .timeline-runner,.process-runner{display:none}
+  .timeline-progress,.process-flow,.project-route{stroke-dashoffset:0}
+  .timeline-runner,.process-runner,.project-runner{display:none}
 }

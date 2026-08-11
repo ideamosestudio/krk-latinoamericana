@@ -315,13 +315,13 @@ select {
   }
 
   .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     margin-top: 58px;
   }
 
   .stats > div {
-    min-height: 138px;
-    padding: 24px 12px 20px;
+    min-height: 106px;
+    padding: 22px 12px;
   }
 
   .stats strong {
@@ -434,7 +434,7 @@ select {
   }
 
   .project-copy dl {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .project-copy dl div {
@@ -630,7 +630,7 @@ select {
   }
 
   .footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .footer-bottom {
@@ -674,7 +674,7 @@ select {
   }
 
   .stats {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .footer-grid {
