@@ -25,8 +25,8 @@ const items: ProductItem[] = [
       { file: "port-mining-systems/coal-handling-01.webp", caption: "Río Turbio" },
       { file: "port-mining-systems/coal-handling-02.webp", caption: "Río Turbio" },
     ],
-    es: lorem,
-    en: lorem,
+    es: "Sistemas integrales para el manejo de carbón diseñados para centrales eléctricas, operaciones mineras e instalaciones portuarias. Desarrollados para proporcionar un transporte seguro, confiable y eficiente, minimizando la generación de polvo, las pérdidas de material y los requerimientos de mantenimiento.",
+    en: "Integrated coal handling systems engineered for power plants, mining operations and port facilities. Designed to provide reliable, safe and efficient material transportation while minimizing dust generation, material losses and maintenance requirements.",
   },
   {
     title: { es: "Sistema de Apile", en: "Stockpile System" },
