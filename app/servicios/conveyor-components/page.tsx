@@ -12,13 +12,13 @@ const items: ProductItem[] = [
     en: "Complete belt cleaning solutions designed to improve conveyor performance by minimizing material carryback, reducing maintenance requirements and protecting belts and conveyor components. Available for a wide range of bulk material handling applications.",
   },
   {
-    title: { es: "Chutes y tolvas", en: "Chutes and Hoppers" },
+    title: { es: "Chutes de transferencia y Tolvas", en: "Transfer Chutes and Hoppers" },
     images: [
       { file: "conveyor-components/chutes-hoppers-01.webp", caption: "YCRT — Río Turbio" },
       { file: "conveyor-components/chutes-hoppers-02.webp", caption: "YPF — Añelo" },
     ],
-    es: lorem,
-    en: lorem,
+    es: "Chutes de transferencia y tolvas diseñados para optimizar el flujo del material, mejorar la alimentación de los transportadores y minimizar el desgaste, la generación de polvo y los requerimientos de mantenimiento. Cada solución se adapta a las características del material transportado y a los requerimientos operativos de cada proyecto.",
+    en: "Engineered transfer chutes and hoppers designed to optimize material flow, improve conveyor loading and minimize wear, dust generation and maintenance requirements. Each solution is tailored to the characteristics of the conveyed material and the operational requirements of the project.",
   },
   {
     title: { es: "Poleas para transportadores", en: "Conveyor Pulleys" },
@@ -49,14 +49,6 @@ const items: ProductItem[] = [
     es: "Amplia gama de rodillos y estaciones para cintas transportadoras diseñados para aplicaciones mineras, portuarias, industriales y agroindustriales. Fabricados de acuerdo con los estándares CEMA, nuestra línea de productos incluye rodillos de carga, retorno, impacto, autocentrantes y especiales, junto con una completa gama de estaciones diseñadas para garantizar un funcionamiento confiable, una prolongada vida útil y bajos requerimientos de mantenimiento.",
     en: "Complete range of conveyor idlers and idler frames engineered for mining, port, industrial and agro-processing applications. Manufactured in accordance with CEMA standards, our product portfolio includes carrying, return, impact, training and special idlers, together with a full range of idler frames designed to ensure reliable operation, long service life and low maintenance.",
   },
-  {
-    title: { es: "Sistemas de contrapeso", en: "Take-Up Systems" },
-    images: [
-      { file: "conveyor-components/take-up-systems-01.webp", caption: "PLL — Chile" },
-    ],
-    es: lorem,
-    en: lorem,
-  },
 ];
 
 export default function Page() {
@@ -65,8 +57,8 @@ export default function Page() {
     image="IMG-009.jpg"
     introTitle={{ es: "Componentes diseñados para", en: "Components engineered for" }}
     introAccent={{ es: "máxima confiabilidad.", en: "maximum reliability." }}
-    en="Engineered conveyor components focused on maximizing conveyor reliability and performance. Our core product line includes idlers and idler frames, complemented by pulleys, take-up systems, chutes and other essential conveyor components."
-    es="Componentes para cintas transportadoras diseñados para maximizar la confiabilidad y el desempeño de los sistemas de transporte. Nuestra principal línea de productos comprende rodillos y soporte de rodillos, complementada con poleas, sistemas de contrapeso, chutes y otros componentes esenciales para transportadores."
+    en="Engineered conveyor components focused on maximizing conveyor reliability and performance. Our core product line includes idlers and idler frames, complemented by pulleys, chutes and other essential conveyor components."
+    es="Componentes para cintas transportadoras diseñados para maximizar la confiabilidad y el desempeño de los sistemas de transporte. Nuestra principal línea de productos comprende rodillos y soporte de rodillos, complementada con poleas, chutes y otros componentes esenciales para transportadores."
     items={items}
   />;
 }
