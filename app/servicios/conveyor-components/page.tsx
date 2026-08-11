@@ -29,23 +29,15 @@ const items: ProductItem[] = [
     en: "Complete conveyor pulley solutions tailored to each application, combining engineering expertise with proven technologies to ensure reliable, efficient and long-lasting conveyor performance.",
   },
   {
-    title: { es: "Estructuras para transportadores", en: "Conveyor Structures" },
+    title: { es: "Estructuras Metálicas para Transportadores", en: "Conveyor Steel Structures" },
     images: [
       { file: "conveyor-components/conveyor-structures-01.webp", caption: "Minera Exar — Salar de Cauchari" },
       { file: "conveyor-components/conveyor-structures-02.webp", caption: "PVSA — Chile" },
-    ],
-    es: lorem,
-    en: lorem,
-  },
-  {
-    title: { es: "Galerías y torres de transferencia", en: "Galleries and Transfer Towers" },
-    images: [
       { file: "conveyor-components/galleries-transfer-towers-01.webp", caption: "Pier Doce — Necochea" },
       { file: "conveyor-components/galleries-transfer-towers-02.webp", caption: "PLL — Chile" },
-      { file: "conveyor-components/galleries-transfer-towers-03.webp", caption: "Terminal 6 — Puerto San Martín" },
     ],
-    es: lorem,
-    en: lorem,
+    es: "Estructuras metálicas integradas para sistemas de manejo de materiales a granel, incluyendo galerías transportadoras, torres de transferencia, cerchas, bielas y estructuras de soporte especiales. Diseñadas para integrarse eficientemente a cada sistema transportador, garantizando confiabilidad estructural, acceso seguro y un desempeño confiable a largo plazo.",
+    en: "Integrated steel structures for bulk material handling systems, including conveyor galleries, transfer towers, trusses, tie rods and custom supporting steelwork. Designed to integrate seamlessly with each conveyor system while ensuring structural reliability, safe access and long-term performance.",
   },
   {
     title: { es: "Rodillos y soporte de rodillos", en: "Idlers and Idler Frames" },
