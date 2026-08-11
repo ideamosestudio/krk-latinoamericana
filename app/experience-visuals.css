@@ -29,8 +29,8 @@
 
 /* 02 — disciplinas */
 .discipline-links line { stroke: rgba(132,184,211,.32); stroke-width: 1.2; stroke-dasharray: 5 7; animation: networkFlow 7s linear infinite; }
-.discipline-node circle { fill: rgba(9,19,25,.92); stroke: rgba(117,211,255,.45); stroke-width: 1; }
-.discipline-node text { fill: #a7dff8; font-size: 8px; font-weight: 700; letter-spacing: 1px; text-anchor: middle; }
+.discipline-node rect { fill: rgba(9,19,25,.94); stroke: rgba(117,211,255,.45); stroke-width: 1; }
+.discipline-node text { fill: #a7dff8; font-size: 7.2px; font-weight: 700; letter-spacing: .28px; text-anchor: middle; }
 .discipline-node { transform-box: fill-box; transform-origin: center; animation: disciplinePulse 5s ease-in-out infinite; }
 .discipline-node.node-2 { animation-delay: .7s; }.discipline-node.node-3 { animation-delay: 1.4s; }.discipline-node.node-4 { animation-delay: 2.1s; }.discipline-node.node-5 { animation-delay: 2.8s; }
 .discipline-core text { fill: #e8f8ff; font-size: 11px; font-weight: 750; letter-spacing: 1px; text-anchor: middle; }
@@ -45,7 +45,7 @@
 .stage-ring { fill: #091117; stroke: rgba(117,211,255,.45); stroke-width: 1; }
 .stage-dot { fill: rgba(117,211,255,.16); }
 .stage-number { fill: #9cdefb; font-size: 7px; font-weight: 700; text-anchor: middle; }
-.stage-label { fill: #8598a2; font-size: 7px; font-weight: 650; letter-spacing: .5px; text-anchor: middle; }
+.stage-label { fill: #8598a2; font-size: 7px; font-weight: 650; letter-spacing: .35px; }
 .stage-guide { stroke: rgba(158,184,198,.28); stroke-width: 1; }
 .process-stage { transform-box: fill-box; transform-origin: center; animation: processStage 7s ease-in-out infinite; }
 .process-stage.stage-2 { animation-delay: .6s; }.process-stage.stage-3 { animation-delay: 1.2s; }.process-stage.stage-4 { animation-delay: 1.8s; }.process-stage.stage-5 { animation-delay: 2.4s; }
@@ -70,7 +70,7 @@
 @keyframes signalTravel { 0%,100%{opacity:.25;transform:scale(.7)} 50%{opacity:1;transform:scale(1.45)} }
 @keyframes processDraw { 0%,10%{stroke-dashoffset:1} 72%,90%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
 @keyframes processStage { 0%,58%,100%{opacity:.52;transform:scale(1)} 68%{opacity:1;transform:scale(1.12)} }
-@keyframes processRunner { 0%,10%{transform:translateX(0);opacity:0} 16%{opacity:1} 72%,90%{transform:translateX(364px);opacity:1} 100%{transform:translateX(364px);opacity:0} }
+@keyframes processRunner { 0%,10%{transform:translateX(0);opacity:0} 16%{opacity:1} 72%,90%{transform:translateX(372px);opacity:1} 100%{transform:translateX(372px);opacity:0} }
 @keyframes projectRoute { 0%,12%{stroke-dashoffset:1} 70%,90%{stroke-dashoffset:0} 100%{stroke-dashoffset:-1} }
 @keyframes projectPulse { 0%,44%{opacity:0;transform:scale(.55)} 55%{opacity:1} 82%,100%{opacity:0;transform:scale(1.65)} }
 @keyframes projectRunner { 0%,10%{opacity:0;transform:translate(0,0)} 16%{opacity:1} 28%{transform:translate(63px,-39px)} 42%{transform:translate(128px,3px)} 56%{transform:translate(193px,-54px)} 70%{transform:translate(260px,-5px)} 84%,92%{opacity:1;transform:translate(356px,-43px)} 100%{opacity:0;transform:translate(356px,-43px)} }

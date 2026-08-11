@@ -22,28 +22,30 @@ export function ExperienceVisual({ type }: { type: string }) {
 
   if (type === "02") {
     const mechanicalKicker = language === "es" ? "KRK / INGENIERÍA MECÁNICA" : "KRK / MECHANICAL ENGINEERING";
-    const mechanicalLabels = language === "es" ? ["CON", "BAS", "DET", "FAB", "EJE"] : ["CON", "BAS", "DET", "MFG", "EXE"];
+    const mechanicalAreas = [
+      { label: "Engineering", x: 38, y: 44, width: 110, centerX: 93, centerY: 58 },
+      { label: "Projects", x: 337, y: 44, width: 72, centerX: 373, centerY: 58 },
+      { label: "Manufacturing", x: 25, y: 142, width: 120, centerX: 85, centerY: 156 },
+      { label: "QA/QC", x: 349, y: 142, width: 64, centerX: 381, centerY: 156 },
+      { label: "Field Support", x: 170, y: 170, width: 100, centerX: 220, centerY: 184 },
+    ];
     return <div className="experience-visual experience-disciplines" aria-hidden="true"><svg viewBox="0 0 440 210" role="img"><title>{language === "es" ? "Ingeniería mecánica especializada integrada con fabricación y ejecución" : "Mechanical engineering excellence integrated with manufacturing and project execution"}</title>
       <text className="visual-kicker" x="24" y="30">{mechanicalKicker}</text>
-      <g className="discipline-links"><line x1="220" y1="105" x2="90" y2="55" /><line x1="220" y1="105" x2="350" y2="55" /><line x1="220" y1="105" x2="74" y2="158" /><line x1="220" y1="105" x2="366" y2="158" /><line x1="220" y1="105" x2="220" y2="184" /></g>
-      <g className="discipline-node node-1"><circle cx="90" cy="55" r="24" /><text x="90" y="59">{mechanicalLabels[0]}</text></g>
-      <g className="discipline-node node-2"><circle cx="350" cy="55" r="24" /><text x="350" y="59">{mechanicalLabels[1]}</text></g>
-      <g className="discipline-node node-3"><circle cx="74" cy="158" r="24" /><text x="74" y="162">{mechanicalLabels[2]}</text></g>
-      <g className="discipline-node node-4"><circle cx="366" cy="158" r="24" /><text x="366" y="162">{mechanicalLabels[3]}</text></g>
-      <g className="discipline-node node-5"><circle cx="220" cy="184" r="20" /><text x="220" y="188">{mechanicalLabels[4]}</text></g>
-      <g className="discipline-core"><circle className="core-ring" cx="220" cy="105" r="45" /><circle className="core-disc" cx="220" cy="105" r="31" /><text x="220" y="110">MEC</text></g>
+      <g className="discipline-links">{mechanicalAreas.map((area) => <line key={area.label} x1="220" y1="105" x2={area.centerX} y2={area.centerY} />)}</g>
+      {mechanicalAreas.map((area, index) => <g className={`discipline-node node-${index + 1}`} key={area.label}><rect x={area.x} y={area.y} width={area.width} height="28" rx="14" /><text x={area.centerX} y={area.centerY + 3}>{area.label}</text></g>)}
+      <g className="discipline-core"><circle className="core-ring" cx="220" cy="105" r="45" /><circle className="core-disc" cx="220" cy="105" r="31" /><text x="220" y="110">KRK</text></g>
       <circle className="signal signal-1" cx="155" cy="80" r="4" /><circle className="signal signal-2" cx="285" cy="80" r="4" /><circle className="signal signal-3" cx="147" cy="132" r="4" /><circle className="signal signal-4" cx="293" cy="132" r="4" />
     </svg></div>;
   }
 
   if (type === "03") {
-    const labels = language === "es" ? ["ESTUDIO", "INGENIERÍA", "FABRICACIÓN", "MONTAJE", "PUESTA EN MARCHA"] : ["STUDY", "ENGINEERING", "MANUFACTURING", "ASSEMBLY", "COMMISSIONING"];
-    const positions = [38, 129, 220, 311, 402];
+    const labels = language === "es" ? ["Concepto", "Ingeniería", "Fabricación", "QA/QC", "Soporte en Obra", "Puesta en Marcha"] : ["Concept", "Engineering", "Manufacturing", "QA/QC", "Site Support", "Commissioning"];
+    const positions = [34, 108, 182, 256, 330, 406];
     return <div className="experience-visual experience-process" aria-hidden="true"><svg viewBox="0 0 440 210" role="img"><title>{language === "es" ? "Proceso integral desde el estudio hasta la puesta en marcha" : "End-to-end process from study to commissioning"}</title>
       <text className="visual-kicker" x="24" y="30">KRK / END-TO-END</text>
-      <path className="process-base" d="M38 112 H402" /><path className="process-flow" pathLength="1" d="M38 112 H402" />
-      {positions.map((x, index) => <g className={`process-stage stage-${index + 1}`} key={x}><circle className="stage-ring" cx={x} cy="112" r="18" /><circle className="stage-dot" cx={x} cy="112" r="6" /><text className="stage-number" x={x} y="116">0{index + 1}</text><text className="stage-label" x={x} y={index % 2 === 0 ? 78 : 157}>{labels[index]}</text><line className="stage-guide" x1={x} y1={index % 2 === 0 ? 86 : 130} x2={x} y2={index % 2 === 0 ? 94 : 138} /></g>)}
-      <circle className="process-runner" cx="38" cy="112" r="8" />
+      <path className="process-base" d="M34 112 H406" /><path className="process-flow" pathLength="1" d="M34 112 H406" />
+      {positions.map((x, index) => <g className={`process-stage stage-${index + 1}`} key={x}><circle className="stage-ring" cx={x} cy="112" r="18" /><circle className="stage-dot" cx={x} cy="112" r="6" /><text className="stage-number" x={x} y="116">0{index + 1}</text><text className="stage-label" x={x} y={index % 2 === 0 ? 76 : 160} textAnchor={index === 0 ? "start" : index === positions.length - 1 ? "end" : "middle"}>{labels[index]}</text><line className="stage-guide" x1={x} y1={index % 2 === 0 ? 84 : 132} x2={x} y2={index % 2 === 0 ? 94 : 142} /></g>)}
+      <circle className="process-runner" cx="34" cy="112" r="8" />
     </svg></div>;
   }
 
