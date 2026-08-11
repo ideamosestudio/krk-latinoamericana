@@ -35,8 +35,8 @@ const items: ProductItem[] = [
       { file: "port-mining-systems/stockpile-systems-02.webp", caption: "Mansfield — Salta" },
       { file: "port-mining-systems/stockpile-systems-03.webp", caption: "YPF — Añelo" },
     ],
-    es: lorem,
-    en: lorem,
+    es: "Sistemas integrales de acopio para materiales a granel, que combinan soluciones de transporte, apilado y almacenamiento para maximizar la eficiencia operativa y optimizar el flujo del material en instalaciones mineras, portuarias, industriales y agroindustriales.",
+    en: "Integrated stockpile systems for bulk materials, combining conveying, stacking and storage solutions to maximize operational efficiency and optimize material flow across mining, port, industrial and agro-processing facilities.",
   },
   {
     title: { es: "Sistemas de recepción y transferencias", en: "Material Receiving and Transfer Facilities" },
