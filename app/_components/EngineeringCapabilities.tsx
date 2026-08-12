@@ -66,6 +66,7 @@ export function EngineeringCapabilities() {
     <div className="container engineering-tools-section">
       <div className="engineering-subsection-heading"><div className="eyebrow light"><span /> {text.toolsEyebrow}</div><div><h2>{text.toolsTitle}<br/><em>{text.toolsAccent}</em></h2><p className="engineering-subsection-intro">{text.toolsCopy}</p></div></div>
       <div className="engineering-tools-grid">{engineeringTools.map((tool,index)=><div className="engineering-tool" key={tool}><span>{String(index+1).padStart(2,"0")}</span><strong>{tool}</strong><i aria-hidden="true" /></div>)}</div>
+      <div className="engineering-tools-marquee" aria-hidden="true"><div className="engineering-tools-track">{[...engineeringTools,...engineeringTools].map((tool,index)=><span key={`${tool}-${index}`}><i />{tool}</span>)}</div></div>
     </div>
     <div className="container engineering-deliverables-section">
       <div className="engineering-subsection-heading"><div className="eyebrow light"><span /> {text.deliverablesEyebrow}</div><div><h2>{text.deliverablesTitle}<br/><em>{text.deliverablesAccent}</em></h2><p className="engineering-subsection-intro engineering-subsection-intro-dark">{text.deliverablesCopy}</p></div></div>
