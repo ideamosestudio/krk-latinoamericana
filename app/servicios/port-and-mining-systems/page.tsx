@@ -17,6 +17,8 @@ const items: ProductItem[] = [
     title: { es: "Sistemas de manejo de litio y materiales mineros", en: "Lithium and Mining Material Handling Systems" },
     images: [
       { file: "port-mining-systems/lithium-mining-01.webp", caption: "Minera EXAR — Jujuy" },
+      { file: "port-mining-systems/lithium-mining-02.webp", caption: "YCRT — Santa Cruz" },
+      { file: "port-mining-systems/lithium-mining-03.webp", caption: "VELADERO — San Juan" },
     ],
     es: "Sistemas integrales de manejo de materiales para operaciones mineras, destinados al transporte y transferencia de litio, concentrados de cobre y otros minerales a granel. Nuestras soluciones combinan ingeniería especializada, equipos confiables y tecnologías probadas para responder a las exigencias operativas de las instalaciones mineras modernas.",
     en: "Integrated bulk material handling systems for mining operations, supporting the transportation and transfer of lithium, copper concentrates and other bulk minerals. Our solutions combine specialized engineering, reliable equipment and proven technologies to meet the operational demands of modern mining facilities.",
