@@ -16,6 +16,24 @@ const capabilities: Capability[] = [
   { kind: "site", title: { es: "Ingeniería en Campo", en: "Site Engineering" }, copy: { es: "Supervisión de montaje, puesta en marcha y asistencia técnica.", en: "Installation supervision, commissioning and technical assistance." } },
 ];
 
+const engineeringTools = [
+  "AutoCAD", "SolidWorks", "Autodesk Inventor", "Tekla Structures", "Belt Analyst",
+  "BeltStat", "Rocky DEM", "Microsoft Project", "Power BI",
+];
+
+const deliverables: LocalizedText[] = [
+  { es: "Estudios conceptuales", en: "Conceptual Studies" },
+  { es: "Ingeniería básica", en: "Basic Engineering" },
+  { es: "Ingeniería de detalle", en: "Detailed Engineering" },
+  { es: "Planos de disposición general", en: "General Arrangement Drawings" },
+  { es: "Cálculos mecánicos", en: "Mechanical Calculations" },
+  { es: "Cálculos estructurales", en: "Structural Calculations" },
+  { es: "Cálculos de transportadores", en: "Conveyor Calculations" },
+  { es: "Hojas de datos de equipos", en: "Equipment Datasheets" },
+  { es: "Especificaciones técnicas", en: "Technical Specifications" },
+  { es: "Requisiciones de materiales", en: "Material Requisitions" },
+  { es: "Evaluaciones técnicas de ofertas", en: "Technical Bid Evaluations" },
+];
 function Diagram({ kind }: { kind: Kind }) {
   if (kind === "concept") return <svg viewBox="0 0 520 240" aria-hidden="true"><g className="ec-grid"><path d="M40 54H480M40 104H480M40 154H480M40 204H480M100 30V220M200 30V220M300 30V220M400 30V220" /></g><path className="ec-flow" d="M58 190C124 190 128 72 202 72S278 174 344 174 402 58 462 58"/><g className="ec-nodes"><circle cx="58" cy="190" r="8"/><circle cx="202" cy="72" r="8"/><circle cx="344" cy="174" r="8"/><circle cx="462" cy="58" r="8"/></g><circle className="ec-runner concept-runner" cx="58" cy="190" r="6"/><g className="ec-label"><text x="58" y="218">INPUT</text><text x="202" y="50" textAnchor="middle">FEASIBILITY</text><text x="344" y="202" textAnchor="middle">LAYOUT</text><text x="462" y="36" textAnchor="end">SOLUTION</text></g></svg>;
   if (kind === "basic") return <svg viewBox="0 0 520 240" aria-hidden="true"><g className="ec-blueprint"><rect x="92" y="38" width="336" height="166" rx="3"/><path d="M118 64H402M118 92H228V178H118ZM256 92H402V138H256ZM256 154H324V178H256ZM340 154H402V178H340ZM92 24H428M78 38V204"/></g><path className="ec-scan" d="M106 52V190"/><g className="ec-label"><text x="260" y="18" textAnchor="middle">GENERAL ARRANGEMENT</text><text x="62" y="122" textAnchor="middle" transform="rotate(-90 62 122)">DESIGN CRITERIA</text></g></svg>;
@@ -29,6 +47,25 @@ function Diagram({ kind }: { kind: Kind }) {
 
 export function EngineeringCapabilities() {
   const { language } = useLanguage();
-  const text = language === "es" ? { eyebrow: "CAPACIDADES DE INGENIERÍA", title: "Ingeniería para cada", accent: "etapa del proyecto.", item: "CAPACIDAD" } : { eyebrow: "ENGINEERING CAPABILITIES", title: "Engineering for every", accent: "project stage.", item: "CAPABILITY" };
-  return <section className="engineering-capabilities" id="capacidades"><div className="container engineering-capabilities-heading"><div className="eyebrow light"><span /> {text.eyebrow}</div><h2>{text.title}<br/><em>{text.accent}</em></h2></div><div className="container engineering-capability-grid">{capabilities.map((capability,index)=>{const number=String(index+1).padStart(2,"0");return <article className={`engineering-capability-card capability-${capability.kind}`} key={capability.kind}><div className="engineering-capability-meta"><span>KRK / {number}</span><span>{text.item} / {number}</span></div><div className="engineering-capability-diagram"><Diagram kind={capability.kind}/></div><div className="engineering-capability-copy"><h3>{capability.title[language]}</h3><p>{capability.copy[language]}</p></div></article>})}</div></section>;
+  const text = language === "es" ? {
+    eyebrow: "CAPACIDADES DE INGENIERÍA", title: "Ingeniería para cada", accent: "etapa del proyecto.", item: "CAPACIDAD",
+    toolsEyebrow: "HERRAMIENTAS DE INGENIERÍA", toolsTitle: "Tecnología para diseñar", toolsAccent: "con precisión.",
+    deliverablesEyebrow: "ENTREGABLES TÍPICOS", deliverablesTitle: "Documentación que convierte", deliverablesAccent: "ingeniería en ejecución.",
+  } : {
+    eyebrow: "ENGINEERING CAPABILITIES", title: "Engineering for every", accent: "project stage.", item: "CAPABILITY",
+    toolsEyebrow: "ENGINEERING TOOLS", toolsTitle: "Technology engineered", toolsAccent: "for precision.",
+    deliverablesEyebrow: "TYPICAL ENGINEERING DELIVERABLES", deliverablesTitle: "Documentation that turns", deliverablesAccent: "engineering into execution.",
+  };
+  return <section className="engineering-capabilities" id="capacidades">
+    <div className="container engineering-capabilities-heading"><div className="eyebrow light"><span /> {text.eyebrow}</div><h2>{text.title}<br/><em>{text.accent}</em></h2></div>
+    <div className="container engineering-capability-grid">{capabilities.map((capability,index)=>{const number=String(index+1).padStart(2,"0");return <article className={`engineering-capability-card capability-${capability.kind}`} key={capability.kind}><div className="engineering-capability-meta"><span>KRK / {number}</span><span>{text.item} / {number}</span></div><div className="engineering-capability-diagram"><Diagram kind={capability.kind}/></div><div className="engineering-capability-copy"><h3>{capability.title[language]}</h3><p>{capability.copy[language]}</p></div></article>})}</div>
+    <div className="container engineering-tools-section">
+      <div className="engineering-subsection-heading"><div className="eyebrow light"><span /> {text.toolsEyebrow}</div><h2>{text.toolsTitle}<br/><em>{text.toolsAccent}</em></h2></div>
+      <div className="engineering-tools-grid">{engineeringTools.map((tool,index)=><div className="engineering-tool" key={tool}><span>{String(index+1).padStart(2,"0")}</span><strong>{tool}</strong><i aria-hidden="true" /></div>)}</div>
+    </div>
+    <div className="container engineering-deliverables-section">
+      <div className="engineering-subsection-heading"><div className="eyebrow light"><span /> {text.deliverablesEyebrow}</div><h2>{text.deliverablesTitle}<br/><em>{text.deliverablesAccent}</em></h2></div>
+      <ol className="engineering-deliverables-list">{deliverables.map((deliverable,index)=><li key={deliverable.en}><span>{String(index+1).padStart(2,"0")}</span><strong>{deliverable[language]}</strong><i aria-hidden="true">↗</i></li>)}</ol>
+    </div>
+  </section>;
 }
