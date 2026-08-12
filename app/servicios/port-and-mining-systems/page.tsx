@@ -7,6 +7,8 @@ const items: ProductItem[] = [
     title: { es: "Sistemas de manejo de granos y harina", en: "Grain and Flour Handling Systems" },
     images: [
       { file: "port-mining-systems/grain-handling-01.webp", caption: "Renova — Timbúes" },
+      { file: "port-mining-systems/grain-handling-02.webp", caption: "Terminal 6 — Puerto San Martín" },
+      { file: "port-mining-systems/grain-handling-03.webp", caption: "Renova — Timbúes" },
     ],
     es: "Sistemas integrales para el manejo de granos diseñados para maximizar la eficiencia operativa, preservar la calidad del producto y garantizar un flujo confiable del material. Nuestras soluciones abarcan la recepción, el transporte, el almacenamiento, la recuperación y la carga a buques o camiones, adaptándose a los requerimientos operativos de terminales y plantas de procesamiento.",
     en: "Integrated grain handling systems engineered to maximize operational efficiency, product integrity and reliable material flow. Our solutions cover receiving, conveying, storage, reclaim and ship or truck loading, tailored to the operational requirements of terminals and processing facilities.",
