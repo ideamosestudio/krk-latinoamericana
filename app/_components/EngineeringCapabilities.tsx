@@ -50,21 +50,25 @@ export function EngineeringCapabilities() {
   const text = language === "es" ? {
     eyebrow: "CAPACIDADES DE INGENIERÍA", title: "Ingeniería para cada", accent: "etapa del proyecto.", item: "CAPACIDAD",
     toolsEyebrow: "HERRAMIENTAS DE INGENIERÍA", toolsTitle: "Tecnología para diseñar", toolsAccent: "con precisión.",
+    toolsCopy: "Nuestras capacidades de ingeniería se apoyan en plataformas de software reconocidas internacionalmente para el diseño de transportadores, análisis estructural, ingeniería mecánica, simulación DEM y gestión de proyectos, permitiendo una ejecución eficiente y confiable de cada proyecto.",
     deliverablesEyebrow: "ENTREGABLES TÍPICOS", deliverablesTitle: "Documentación que convierte", deliverablesAccent: "ingeniería en ejecución.",
+    deliverablesCopy: "Nuestros entregables de ingeniería constituyen la base técnica de cada etapa del proyecto, desde los estudios conceptuales hasta la documentación conforme a obra (As-Built). Desarrollados bajo estándares internacionales de ingeniería, respaldan las compras, la fabricación, la construcción y la ejecución exitosa de cada proyecto.",
   } : {
     eyebrow: "ENGINEERING CAPABILITIES", title: "Engineering for every", accent: "project stage.", item: "CAPABILITY",
     toolsEyebrow: "ENGINEERING TOOLS", toolsTitle: "Technology engineered", toolsAccent: "for precision.",
+    toolsCopy: "Our engineering capabilities are supported by internationally recognized software platforms for conveyor design, structural analysis, mechanical engineering, DEM simulation and project management, enabling efficient and reliable project execution.",
     deliverablesEyebrow: "TYPICAL ENGINEERING DELIVERABLES", deliverablesTitle: "Documentation that turns", deliverablesAccent: "engineering into execution.",
+    deliverablesCopy: "Our engineering deliverables provide the technical foundation for every project stage, from conceptual studies to final as-built documentation. Developed to international engineering standards, they support procurement, manufacturing, construction and successful project execution.",
   };
   return <section className="engineering-capabilities" id="capacidades">
     <div className="container engineering-capabilities-heading"><div className="eyebrow light"><span /> {text.eyebrow}</div><h2>{text.title}<br/><em>{text.accent}</em></h2></div>
     <div className="container engineering-capability-grid">{capabilities.map((capability,index)=>{const number=String(index+1).padStart(2,"0");return <article className={`engineering-capability-card capability-${capability.kind}`} key={capability.kind}><div className="engineering-capability-meta"><span>KRK / {number}</span><span>{text.item} / {number}</span></div><div className="engineering-capability-diagram"><Diagram kind={capability.kind}/></div><div className="engineering-capability-copy"><h3>{capability.title[language]}</h3><p>{capability.copy[language]}</p></div></article>})}</div>
     <div className="container engineering-tools-section">
-      <div className="engineering-subsection-heading"><div className="eyebrow light"><span /> {text.toolsEyebrow}</div><h2>{text.toolsTitle}<br/><em>{text.toolsAccent}</em></h2></div>
+      <div className="engineering-subsection-heading"><div className="eyebrow light"><span /> {text.toolsEyebrow}</div><div><h2>{text.toolsTitle}<br/><em>{text.toolsAccent}</em></h2><p className="engineering-subsection-intro">{text.toolsCopy}</p></div></div>
       <div className="engineering-tools-grid">{engineeringTools.map((tool,index)=><div className="engineering-tool" key={tool}><span>{String(index+1).padStart(2,"0")}</span><strong>{tool}</strong><i aria-hidden="true" /></div>)}</div>
     </div>
     <div className="container engineering-deliverables-section">
-      <div className="engineering-subsection-heading"><div className="eyebrow light"><span /> {text.deliverablesEyebrow}</div><h2>{text.deliverablesTitle}<br/><em>{text.deliverablesAccent}</em></h2></div>
+      <div className="engineering-subsection-heading"><div className="eyebrow light"><span /> {text.deliverablesEyebrow}</div><div><h2>{text.deliverablesTitle}<br/><em>{text.deliverablesAccent}</em></h2><p className="engineering-subsection-intro engineering-subsection-intro-dark">{text.deliverablesCopy}</p></div></div>
       <ol className="engineering-deliverables-list">{deliverables.map((deliverable,index)=><li key={deliverable.en}><span>{String(index+1).padStart(2,"0")}</span><strong>{deliverable[language]}</strong><i aria-hidden="true">↗</i></li>)}</ol>
     </div>
   </section>;
