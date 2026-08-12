@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { InnerHero, InnerShell, base } from "./InnerShell";
 import { ServiceGallery } from "./ServiceGallery";
 import { ClientLogoStrip } from "./ClientLogoStrip";
@@ -29,9 +30,10 @@ type ServiceDetailProps = {
   catalogTitle?: LocalizedText | string;
   catalogAccent?: LocalizedText | string;
   catalogItemLabel?: LocalizedText | string;
+  children?: ReactNode;
 };
 
-export function ServiceDetail({ title, en, es, image, introTitle = { es: "Ingeniería para", en: "Engineering for" }, introAccent = { es: "operaciones exigentes.", en: "demanding operations." }, items = [], gallery = galleryImages, catalogEyebrow, catalogTitle, catalogAccent, catalogItemLabel }: ServiceDetailProps) {
+export function ServiceDetail({ title, en, es, image, introTitle = { es: "Ingeniería para", en: "Engineering for" }, introAccent = { es: "operaciones exigentes.", en: "demanding operations." }, items = [], gallery = galleryImages, catalogEyebrow, catalogTitle, catalogAccent, catalogItemLabel, children }: ServiceDetailProps) {
   const { language } = useLanguage();
   const text = language === "es" ? {
     eyebrow: "PRODUCTOS Y SERVICIOS", description: "Ingeniería, fabricación y ejecución integradas para el movimiento confiable de materiales.", capabilities: "KRK / CAPACIDADES", condition: "Soluciones desarrolladas para cada condición de operación.", overview: "ES / DESCRIPCIÓN", consult: "Consultar este servicio", all: "Ver todos los servicios", equipment: "EQUIPOS Y SISTEMAS", products: "Productos para un flujo", continuous: "continuo y confiable.", itemLabel: "EQUIPO",
@@ -49,10 +51,10 @@ export function ServiceDetail({ title, en, es, image, introTitle = { es: "Ingeni
   return <InnerShell>
     <InnerHero eyebrow={text.eyebrow} title={title} image={image} description={text.description} />
     <section className="detail-intro section" id="contenido"><div className="container detail-editorial"><aside><div className="eyebrow"><span /> {text.capabilities}</div><p>{text.condition}</p></aside><div><h2>{selectText(introTitle, language)}<br /><em>{selectText(introAccent, language)}</em></h2><div className="detail-language-single"><small>{text.overview}</small><p>{overview}</p></div><div className="detail-actions"><a className="detail-cta dark" href={`${base}/#contacto`}>{text.consult} <i>↗</i></a><a className="detail-secondary" href={`${base}/servicios/`}><i>←</i> {text.all}</a></div></div></div></section>
-    {items.length > 0 ? <section className="product-catalog" id="equipos"><div className="container catalog-heading"><div className="eyebrow light"><span /> {catalog.eyebrow}</div><h2>{catalog.title}<br /><em>{catalog.accent}</em></h2></div><div className="container">{items.map((item, index) => {
+    {children ?? (items.length > 0 ? <section className="product-catalog" id="equipos"><div className="container catalog-heading"><div className="eyebrow light"><span /> {catalog.eyebrow}</div><h2>{catalog.title}<br /><em>{catalog.accent}</em></h2></div><div className="container">{items.map((item, index) => {
       const itemTitle = selectText(item.title, language);
       return <article className="product-row" key={selectText(item.title, "en")}><div className="product-number">KRK / {String(index + 1).padStart(2, "0")}</div><ProductCarousel images={item.images} title={itemTitle} /><div className="product-text"><small>{catalog.itemLabel} / {String(index + 1).padStart(2, "0")}</small><h2>{itemTitle}</h2><div className="product-copy-selected"><b>{language.toUpperCase()}</b><p>{item[language]}</p></div></div></article>;
-    })}</div></section> : <ServiceGallery images={gallery} />}
+    })}</div></section> : <ServiceGallery images={gallery} />)}
     <ClientLogoStrip />
   </InnerShell>;
 }
