@@ -26,3 +26,10 @@
 @keyframes engineeringToolsMarquee{to{transform:translate3d(-50%,0,0)}}
 @media(max-width:560px){.engineering-tools-marquee{margin-top:30px;padding:16px 0}.engineering-tools-track{animation-duration:34s}.engineering-tools-track span{padding:0 23px;font-size:9px}}
 @media(prefers-reduced-motion:reduce){.engineering-tools-track{animation-duration:100s}}
+/* Full-bleed premium transition marquee */
+.engineering-tools-marquee{width:100vw;margin:64px calc(50% - 50vw) -112px;padding:26px 0 25px;border:0;border-top:1px solid rgba(112,211,255,.48);border-bottom:1px solid #172c38;background:linear-gradient(90deg,#061018 0%,#0a1b26 48%,#061018 100%);box-shadow:0 -16px 42px rgba(8,50,73,.12),inset 0 1px rgba(255,255,255,.025);mask-image:none}
+.engineering-tools-marquee:before{width:13%;background:linear-gradient(90deg,#061018 20%,transparent)}
+.engineering-tools-marquee:after{width:13%;background:linear-gradient(-90deg,#061018 20%,transparent)}
+.engineering-tools-track span{gap:21px;padding:0 38px;color:#b5c7d1;font-size:10px;letter-spacing:.18em}
+.engineering-tools-track span i{width:5px;height:5px;background:#79d9ff;box-shadow:0 0 12px rgba(121,217,255,.72)}
+@media(max-width:560px){.engineering-tools-marquee{width:100vw;margin:46px calc(50% - 50vw) -78px;padding:22px 0 21px}.engineering-tools-track span{padding:0 28px;color:#b9cbd4}}
