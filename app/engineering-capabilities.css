@@ -5,3 +5,15 @@
 @media(max-width:900px){.engineering-subsection-heading{grid-template-columns:1fr;gap:42px}.engineering-tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.engineering-deliverables-list{grid-template-columns:1fr}.engineering-deliverables-list li,.engineering-deliverables-list li:nth-child(even){border-right:0}.engineering-deliverables-list li:last-child{grid-column:auto}}
 @media(max-width:560px){.engineering-tools-section,.engineering-deliverables-section{margin-top:88px;padding-top:64px}.engineering-subsection-heading{margin-bottom:42px}.engineering-subsection-heading h2{font-size:40px}.engineering-tools-grid{grid-template-columns:1fr}.engineering-tool{min-height:116px;padding:21px}.engineering-tool strong{font-size:20px}.engineering-deliverables-list li{min-height:78px;padding:0 15px;grid-template-columns:31px 1fr 32px;gap:10px}.engineering-deliverables-list li strong{font-size:16px}.engineering-deliverables-list li i{width:30px;height:30px}}
 @media(prefers-reduced-motion:reduce){.engineering-tool i{animation:none}}
+/* Clear sectional contrast: tools on light, deliverables on dark */
+.engineering-tools-section{margin-top:130px;padding-top:100px;padding-bottom:112px;border-top:0;color:#070a0c;background:#edf2f4;box-shadow:0 0 0 100vmax #edf2f4;clip-path:inset(0 -100vmax)}
+.engineering-tools-section .eyebrow.light{color:#65717a}
+.engineering-tools-section .eyebrow.light span{background:#111}
+.engineering-tools-section .engineering-tools-grid{border-color:#cbd3d8}
+.engineering-tools-section .engineering-tool{border-color:#c4ced3;background:#f5f8f9}
+.engineering-tools-section .engineering-tool:before{border-color:rgba(18,119,169,.2)}
+.engineering-tools-section .engineering-tool span{color:#72818a}
+.engineering-tools-section .engineering-tool:hover{background:#e4f1f6}
+.engineering-tools-section .engineering-tool:hover:before{background:rgba(74,178,230,.12)}
+.engineering-deliverables-section{margin-top:0;padding-top:112px;border-top:0}
+@media(max-width:560px){.engineering-tools-section{margin-top:88px;padding-top:72px;padding-bottom:78px}.engineering-deliverables-section{margin-top:0;padding-top:78px}}
