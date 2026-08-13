@@ -33,3 +33,16 @@
 .engineering-tools-track span{gap:21px;padding:0 38px;color:#b5c7d1;font-size:10px;letter-spacing:.18em}
 .engineering-tools-track span i{width:5px;height:5px;background:#79d9ff;box-shadow:0 0 12px rgba(121,217,255,.72)}
 @media(max-width:560px){.engineering-tools-marquee{width:100vw;margin:46px calc(50% - 50vw) -78px;padding:22px 0 21px}.engineering-tools-track span{padding:0 28px;color:#b9cbd4}}
+/* Editorial capability rows with photo carousels */
+.engineering-capability-rows{position:relative;z-index:2}
+.engineering-capability-row{grid-template-columns:70px 40% 1fr;margin:0;padding:64px 0;border-top:1px solid #293137;align-items:center}
+.engineering-capability-row:first-child{border-top-color:#3a474f}
+.engineering-capability-row .product-carousel{border-radius:5px}
+.engineering-capability-row .product-text small{display:block;margin-bottom:22px;color:#71838c;font:600 8px var(--font-geist-mono);letter-spacing:.16em}
+.engineering-capability-row .product-text h2{margin-bottom:32px}
+.engineering-capability-row .product-copy-selected{padding-top:24px;border-top:1px solid #293137}
+.engineering-capability-row .product-copy-selected b{display:block;margin-bottom:18px;color:#71838c;font:600 8px var(--font-geist-mono);letter-spacing:.16em}
+.engineering-capability-row .product-copy-selected p{color:#a5b0b6;font-size:14px;line-height:1.72}
+.engineering-capability-rows+.engineering-tools-section{margin-top:92px}
+@media(max-width:900px){.engineering-capability-row{grid-template-columns:35px 1fr;gap:20px}.engineering-capability-row .product-carousel,.engineering-capability-row .product-text{grid-column:2}}
+@media(max-width:560px){.engineering-capability-row{display:grid;grid-template-columns:1fr;padding:48px 0;gap:20px}.engineering-capability-row .product-number,.engineering-capability-row .product-carousel,.engineering-capability-row .product-text{grid-column:1}.engineering-capability-row .product-text h2{font-size:34px}.engineering-capability-row .product-copy-selected p{font-size:13px}}
