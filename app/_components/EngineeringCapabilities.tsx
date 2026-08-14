@@ -28,12 +28,12 @@ export function EngineeringCapabilities() {
     eyebrow: "ENGINEERING CAPABILITIES", title: "Engineering for every", accent: "project stage.",
   };
   return <section className="engineering-capabilities" id="capacidades">
+    <div className="engineering-tools-marquee" aria-hidden="true"><div className="engineering-tools-track">{[...engineeringTools,...engineeringTools].map((tool,index)=><span key={`${tool}-${index}`}><i />{tool}</span>)}</div></div>
     <div className="engineering-capability-stage">
       <div className="container">
         <div className="engineering-capabilities-heading"><div className="eyebrow light"><span /> {text.eyebrow}</div><h2>{text.title}<br/><em>{text.accent}</em></h2></div>
         <ol className="engineering-capability-list">{capabilities.map((capability,index)=>{const number=String(index+1).padStart(2,"0");return <li key={capability.kind}><span>{number}</span><div><h3>{capability.title[language]}</h3><p>{capability.copy[language]}</p></div><i aria-hidden="true">↗</i></li>})}</ol>
       </div>
     </div>
-    <div className="engineering-tools-marquee" aria-hidden="true"><div className="engineering-tools-track">{[...engineeringTools,...engineeringTools].map((tool,index)=><span key={`${tool}-${index}`}><i />{tool}</span>)}</div></div>
   </section>;
 }
