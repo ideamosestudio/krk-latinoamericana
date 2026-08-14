@@ -11,5 +11,5 @@ const copy = {
 export default function QuienesSomos() {
   const { language } = useLanguage();
   const text = copy[language];
-  return <InnerShell><InnerHero eyebrow={text.eyebrow} title={text.title} accent={text.accent} image="PORTADA-003.jpg" /><section className="about-page section" id="contenido"><div className="container about-page-grid"><aside><div className="eyebrow"><span /> {text.since}</div><p>{text.aside}</p></aside><div><h2>{text.heading} <em>{text.headingAccent}</em></h2><div className="about-columns"><p>{text.p1}</p><p>{text.p2}</p></div><a className="detail-cta dark" href={`${base}/servicios/`}>{text.button} <i>↗</i></a></div></div></section></InnerShell>;
+  return <InnerShell><InnerHero eyebrow={text.eyebrow} title={text.title} accent={text.accent} image="quienes-somos-hero.webp" /><section className="about-page section" id="contenido"><div className="container about-page-grid"><aside><div className="eyebrow"><span /> {text.since}</div><p>{text.aside}</p></aside><div><h2>{text.heading} <em>{text.headingAccent}</em></h2><div className="about-columns"><p>{text.p1}</p><p>{text.p2}</p></div><a className="detail-cta dark" href={`${base}/servicios/`}>{text.button} <i>↗</i></a></div></div></section></InnerShell>;
 }
