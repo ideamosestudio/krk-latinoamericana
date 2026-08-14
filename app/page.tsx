@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { SiteHeader } from "./_components/SiteHeader";
 import { SiteFooter } from "./_components/InnerShell";
 import { ExperienceVisual } from "./_components/ExperienceVisual";
+import { ServiceGallery } from "./_components/ServiceGallery";
 import { selectText, useLanguage, type LocalizedText } from "./_components/LanguageProvider";
 
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -17,6 +18,12 @@ const clients = [
   { name: "YPF", file: "ypf.png" },
 ];
 
+const homeGalleryImages = [
+  { file: "PORTADA-006.jpg", alt: { es: "Sistema de transporte de materiales a granel sobre terminal marítima", en: "Bulk material conveying system at a maritime terminal" }, position: "78% center" },
+  { file: "IMG-009.jpg", alt: { es: "Transportador industrial de KRK en operación", en: "KRK industrial conveyor in operation" } },
+  { file: "engineering-gallery-03.webp", alt: { es: "Sistema transportador portuario de KRK sobre el mar", en: "KRK port conveyor system over the sea" } },
+  { file: "engineering-gallery-04.webp", alt: { es: "Transportador industrial de KRK en operación invernal", en: "KRK industrial conveyor in winter operation" } },
+];
 const sectors: { n: string; title: LocalizedText; copy: LocalizedText }[] = [
   { n: "01", title: { es: "Años de Experiencia", en: "Years of Experience" }, copy: { es: "Desarrollando sistemas de manejo de materiales a granel desde 2001.", en: "Developing bulk material handling systems since 2001." } },
   { n: "02", title: { es: "Ingeniería Mecánica Especializada", en: "Mechanical Engineering Excellence" }, copy: { es: "Ingeniería especializada en manejo de materiales a granel, abarcando ingeniería conceptual, básica y de detalle, integrada con fabricación y ejecución de proyectos.", en: "Specialized engineering in bulk material handling, covering conceptual, basic and detailed design, integrated with project execution and manufacturing." } },
@@ -86,6 +93,8 @@ export default function Home() {
     <section className="engineering-banner" data-reveal><img src={`${assetBase}/images/BACK-002.jpg`} alt={text.bannerAlt} /><div className="banner-shade" /><div className="container banner-content"><div className="eyebrow light"><span /> {text.movement}</div><h2>{text.integrated}<br /><em>{text.demanding}</em></h2><p>{text.bannerCopy}</p><DoubleActions primary={text.discuss} secondary={text.process} primaryHref="#contacto" secondaryHref={`${assetBase}/servicios/engineering-and-project-services/`} light /></div></section>
 
     <section className="project section" data-reveal><div className="container project-grid"><div className="project-image"><img src={`${assetBase}/images/IMG-009.jpg`} alt={text.projectAlt} /><span>{text.field}</span></div><div className="project-copy"><div className="eyebrow"><span /> {text.fromConcept}</div><h2>{text.oneSolution}<br /><em>{text.everyStage}</em></h2><p>{text.projectCopy}</p><dl><div><dt>01</dt><dd>{text.mining}</dd></div><div><dt>02</dt><dd>{text.agribusiness}</dd></div><div><dt>03</dt><dd>{text.energy}</dd></div><div><dt>04</dt><dd>{text.ports}</dd></div></dl><DoubleActions primary={text.start} secondary={text.viewServices} primaryHref="#contacto" secondaryHref="#soluciones" /></div></div></section>
+
+    <ServiceGallery images={homeGalleryImages} />
 
     <section className="contact" id="contacto" data-reveal><div className="contact-gridlines" /><div className="contact-glow contact-glow-a" /><div className="contact-glow contact-glow-b" /><div className="contact-beam" /><div className="container contact-grid"><div className="contact-heading"><div className="eyebrow light"><span /> {text.contact}</div><h2>{text.contactTitle}<br /><em>{text.contactAccent}</em></h2><p>{text.contactCopy}</p></div><div className="contact-side"><div className="form-head"><span>{text.conversation}</span><b>01 / 04</b></div><form className="contact-form" action="mailto:contactenos@krk.com" method="post" encType="text/plain"><label><span>{text.name}</span><input type="text" name="nombre" autoComplete="name" required placeholder={text.namePlaceholder} /></label><label><span>{text.companyLabel}</span><input type="text" name="empresa" autoComplete="organization" placeholder={text.companyPlaceholder} /></label><div className="form-row"><label><span>{text.email}</span><input type="email" name="email" autoComplete="email" required placeholder={text.emailPlaceholder} /></label><label><span>{text.phone}</span><input type="tel" name="telefono" autoComplete="tel" placeholder="+54" /></label></div><label><span>{text.help}</span><textarea name="mensaje" required rows={3} placeholder={text.helpPlaceholder} /></label><div className="form-actions"><button type="submit"><span>{text.send}</span><i>↗</i></button><a href="#top"><i>↓</i><span>{text.back}</span></a></div></form></div></div></section>
     <SiteFooter />
