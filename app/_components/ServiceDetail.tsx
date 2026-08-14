@@ -31,9 +31,10 @@ type ServiceDetailProps = {
   catalogAccent?: LocalizedText | string;
   catalogItemLabel?: LocalizedText | string;
   children?: ReactNode;
+  galleryAfterContent?: boolean;
 };
 
-export function ServiceDetail({ title, en, es, image, introTitle = { es: "Ingeniería para", en: "Engineering for" }, introAccent = { es: "operaciones exigentes.", en: "demanding operations." }, items = [], gallery = galleryImages, catalogEyebrow, catalogTitle, catalogAccent, catalogItemLabel, children }: ServiceDetailProps) {
+export function ServiceDetail({ title, en, es, image, introTitle = { es: "Ingeniería para", en: "Engineering for" }, introAccent = { es: "operaciones exigentes.", en: "demanding operations." }, items = [], gallery = galleryImages, catalogEyebrow, catalogTitle, catalogAccent, catalogItemLabel, children, galleryAfterContent = false }: ServiceDetailProps) {
   const { language } = useLanguage();
   const text = language === "es" ? {
     eyebrow: "PRODUCTOS Y SERVICIOS", description: "Ingeniería, fabricación y ejecución integradas para el movimiento confiable de materiales.", capabilities: "KRK / CAPACIDADES", condition: "Soluciones desarrolladas para cada condición de operación.", overview: "ES / DESCRIPCIÓN", consult: "Consultar este servicio", all: "Ver todos los servicios", equipment: "EQUIPOS Y SISTEMAS", products: "Productos para un flujo", continuous: "continuo y confiable.", itemLabel: "EQUIPO",
@@ -55,6 +56,7 @@ export function ServiceDetail({ title, en, es, image, introTitle = { es: "Ingeni
       const itemTitle = selectText(item.title, language);
       return <article className="product-row" key={selectText(item.title, "en")}><div className="product-number">KRK / {String(index + 1).padStart(2, "0")}</div><ProductCarousel images={item.images} title={itemTitle} /><div className="product-text"><small>{catalog.itemLabel} / {String(index + 1).padStart(2, "0")}</small><h2>{itemTitle}</h2><div className="product-copy-selected"><b>{language.toUpperCase()}</b><p>{item[language]}</p></div></div></article>;
     })}</div></section> : <ServiceGallery images={gallery} />)}
+    {children && galleryAfterContent ? <ServiceGallery images={gallery} /> : null}
     <ClientLogoStrip />
   </InnerShell>;
 }
