@@ -34,7 +34,6 @@ export function EngineeringCapabilities() {
     description: "We develop conceptual, basic and detailed engineering for bulk material handling systems, integrating mechanical and structural design, technical specifications, procurement support, manufacturing management, QA/QC and site assistance during installation and commissioning. Our approach combines engineering expertise, field experience and project integration to reduce risk and optimize execution.",
   };
   return <section className="engineering-capabilities" id="capacidades">
-    <div className="engineering-tools-marquee" aria-hidden="true"><div className="engineering-tools-track">{[...engineeringTools,...engineeringTools].map((tool,index)=><span key={`${tool}-${index}`}><i />{tool}</span>)}</div></div>
     <div className="engineering-capability-stage">
       <div className="container engineering-capabilities-layout">
         <div className="engineering-capabilities-intro">
@@ -46,4 +45,8 @@ export function EngineeringCapabilities() {
       </div>
     </div>
   </section>;
+}
+
+export function EngineeringToolsMarquee() {
+  return <div className="engineering-tools-marquee" aria-hidden="true"><div className="engineering-tools-track">{[...engineeringTools,...engineeringTools].map((tool,index)=><span key={`${tool}-${index}`}><i />{tool}</span>)}</div></div>;
 }

@@ -1,7 +1,7 @@
 .engineering-capabilities {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow: clip;
   padding: 0;
   background: #061018;
 }
@@ -145,7 +145,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  overflow: hidden;
+  overflow: clip;
   margin: 0;
   padding: 26px 0 25px;
   border-top: 1px solid rgba(112,211,255,.48);

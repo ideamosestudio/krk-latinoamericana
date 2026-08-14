@@ -1,4 +1,4 @@
-import { EngineeringCapabilities } from "../../_components/EngineeringCapabilities";
+import { EngineeringCapabilities, EngineeringToolsMarquee } from "../../_components/EngineeringCapabilities";
 import { ServiceDetail } from "../../_components/ServiceDetail";
 
 export default function Page() {
@@ -8,7 +8,8 @@ export default function Page() {
     introTitle={{ es: "Ingeniería y gestión para", en: "Engineering and management for" }}
     introAccent={{ es: "ejecución integral.", en: "end-to-end execution." }}
     en="We develop conceptual, basic and detailed engineering for bulk material handling systems, integrating mechanical and structural design, technical specifications, procurement support, manufacturing management, QA/QC and site assistance during installation and commissioning. Our approach combines engineering expertise, field experience and project integration to reduce risk and optimize execution."
-    galleryBeforeContent
+    galleryAfterContent
+    afterGallery={<EngineeringToolsMarquee />}
     hideIntro
     es="Desarrollamos ingeniería conceptual, básica y de detalle para sistemas de manejo de materiales a granel, integrando diseño mecánico y estructural, especificaciones técnicas, soporte a compras, gestión de fabricación, QA/QC y asistencia durante el montaje y la puesta en marcha. Nuestro enfoque combina capacidad técnica, experiencia en terreno y una visión integral del proyecto para reducir riesgos y optimizar la ejecución."
   >
