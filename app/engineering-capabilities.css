@@ -30,25 +30,39 @@
   color: #070a0c;
 }
 
-.engineering-capabilities-heading {
+.engineering-capabilities-layout {
   display: grid;
-  grid-template-columns: 28% 1fr;
-  gap: 8%;
+  grid-template-columns: 42% minmax(0, 1fr);
+  gap: 9%;
   align-items: start;
-  margin-bottom: 72px;
 }
 
-.engineering-capabilities-heading h2 {
-  margin: 0;
-  font-size: clamp(46px, 4.8vw, 70px);
+.engineering-capabilities-intro {
+  position: sticky;
+  top: 116px;
+  align-self: start;
+  padding-right: clamp(0px, 2vw, 28px);
+}
+
+.engineering-capabilities-intro h2 {
+  margin: 36px 0 32px;
+  font-size: clamp(48px, 4.7vw, 70px);
   font-weight: 520;
-  line-height: 1;
+  line-height: .97;
   letter-spacing: -.06em;
 }
 
-.engineering-capabilities-heading h2 em {
+.engineering-capabilities-intro h2 em {
   font-family: Georgia, serif;
   font-weight: 400;
+}
+
+.engineering-capabilities-intro > p {
+  max-width: 520px;
+  margin: 0;
+  color: #5b6971;
+  font-size: 15px;
+  line-height: 1.72;
 }
 
 .engineering-capability-stage .eyebrow.light { color: #64727a; }
@@ -58,61 +72,54 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid #b8c3c9;
+  border-top: 1px solid #aeb9bf;
 }
 
 .engineering-capability-list li {
   position: relative;
-  min-height: 132px;
+  min-height: 144px;
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr) 44px;
-  gap: 28px;
-  align-items: center;
-  border-bottom: 1px solid #b8c3c9;
+  grid-template-columns: 42px minmax(0, 1fr) 30px;
+  gap: 22px;
+  align-items: start;
+  padding: 34px 0;
+  border-bottom: 1px solid #aeb9bf;
   transition: padding .38s cubic-bezier(.22,1,.36,1), background .32s;
 }
 
 .engineering-capability-list li > span {
-  align-self: start;
-  padding-top: 31px;
-  color: #71818a;
+  padding-top: 4px;
+  color: #65767f;
   font: 600 9px var(--font-geist-mono);
   letter-spacing: .14em;
 }
 
 .engineering-capability-list li > div {
-  display: grid;
-  grid-template-columns: minmax(260px,.72fr) minmax(0,1fr);
-  gap: clamp(34px,6vw,96px);
-  align-items: center;
+  min-width: 0;
 }
 
 .engineering-capability-list h3 {
-  margin: 0;
-  font-size: clamp(25px,2.35vw,36px);
+  margin: 0 0 13px;
+  font-size: clamp(22px, 1.9vw, 29px);
   font-weight: 520;
-  line-height: 1.04;
-  letter-spacing: -.045em;
+  line-height: 1.08;
+  letter-spacing: -.04em;
 }
 
 .engineering-capability-list p {
-  max-width: 610px;
+  max-width: 650px;
   margin: 0;
-  color: #53616a;
-  font-size: 14px;
-  line-height: 1.72;
+  color: #5f6d75;
+  font-size: 13px;
+  line-height: 1.65;
 }
 
 .engineering-capability-list li > i {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border: 1px solid #9eabb2;
-  border-radius: 50%;
-  color: #52636c;
+  padding-top: 1px;
+  color: #111;
+  font-size: 17px;
   font-style: normal;
-  transition: transform .38s, background .3s, color .3s;
+  transition: transform .35s;
 }
 
 .engineering-capability-list li::after {
@@ -128,11 +135,11 @@
 
 .engineering-capability-list li:hover {
   padding-left: 14px;
-  background: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.52);
 }
 
 .engineering-capability-list li:hover::after { right: 0; }
-.engineering-capability-list li:hover > i { transform: rotate(45deg); background: #071018; color: #fff; }
+.engineering-capability-list li:hover > i { transform: rotate(45deg); }
 
 .engineering-tools-marquee {
   position: relative;
@@ -200,21 +207,20 @@
 
 @media (max-width: 900px) {
   .engineering-capability-stage { padding: 96px 0; }
-  .engineering-capabilities-heading { grid-template-columns: 1fr; gap: 42px; }
-  .engineering-capability-list li > div { grid-template-columns: 1fr; gap: 12px; }
-  .engineering-capability-list p { max-width: 720px; }
+  .engineering-capabilities-layout { grid-template-columns: 1fr; gap: 58px; }
+  .engineering-capabilities-intro { position: static; padding-right: 0; }
+  .engineering-capabilities-intro > p { max-width: 720px; }
 }
 
 @media (max-width: 560px) {
   .engineering-capability-stage { padding: 82px 0 76px; }
-  .engineering-capabilities-heading { margin-bottom: 48px; }
-  .engineering-capabilities-heading h2 { font-size: 42px; }
-  .engineering-capability-list li { min-height: 0; grid-template-columns: 32px minmax(0,1fr) 36px; gap: 10px; padding: 26px 0; }
+  .engineering-capabilities-layout { gap: 46px; }
+  .engineering-capabilities-intro h2 { margin: 28px 0 25px; font-size: 42px; }
+  .engineering-capabilities-intro > p { font-size: 14px; }
+  .engineering-capability-list li { min-height: 0; grid-template-columns: 30px minmax(0,1fr) 22px; gap: 10px; padding: 26px 0; }
   .engineering-capability-list li > span { padding-top: 4px; font-size: 8px; }
-  .engineering-capability-list li > div { gap: 10px; }
   .engineering-capability-list h3 { font-size: 25px; }
   .engineering-capability-list p { font-size: 13px; line-height: 1.62; }
-  .engineering-capability-list li > i { width: 34px; height: 34px; }
   .engineering-capability-list li:hover { padding-left: 0; }
   .engineering-tools-marquee { padding: 21px 0; }
   .engineering-tools-track { animation-duration: 34s; }

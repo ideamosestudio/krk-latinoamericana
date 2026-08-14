@@ -23,15 +23,25 @@ const engineeringTools = [
 export function EngineeringCapabilities() {
   const { language } = useLanguage();
   const text = language === "es" ? {
-    eyebrow: "CAPACIDADES DE INGENIERÍA", title: "Ingeniería para cada", accent: "etapa del proyecto.",
+    eyebrow: "CAPACIDADES DE INGENIERÍA",
+    title: "Ingeniería y gestión para",
+    accent: "ejecución integral.",
+    description: "Desarrollamos ingeniería conceptual, básica y de detalle para sistemas de manejo de materiales a granel, integrando diseño mecánico y estructural, especificaciones técnicas, soporte a compras, gestión de fabricación, QA/QC y asistencia durante el montaje y la puesta en marcha. Nuestro enfoque combina capacidad técnica, experiencia en terreno y una visión integral del proyecto para reducir riesgos y optimizar la ejecución.",
   } : {
-    eyebrow: "ENGINEERING CAPABILITIES", title: "Engineering for every", accent: "project stage.",
+    eyebrow: "ENGINEERING CAPABILITIES",
+    title: "Engineering and management for",
+    accent: "end-to-end execution.",
+    description: "We develop conceptual, basic and detailed engineering for bulk material handling systems, integrating mechanical and structural design, technical specifications, procurement support, manufacturing management, QA/QC and site assistance during installation and commissioning. Our approach combines engineering expertise, field experience and project integration to reduce risk and optimize execution.",
   };
   return <section className="engineering-capabilities" id="capacidades">
     <div className="engineering-tools-marquee" aria-hidden="true"><div className="engineering-tools-track">{[...engineeringTools,...engineeringTools].map((tool,index)=><span key={`${tool}-${index}`}><i />{tool}</span>)}</div></div>
     <div className="engineering-capability-stage">
-      <div className="container">
-        <div className="engineering-capabilities-heading"><div className="eyebrow light"><span /> {text.eyebrow}</div><h2>{text.title}<br/><em>{text.accent}</em></h2></div>
+      <div className="container engineering-capabilities-layout">
+        <div className="engineering-capabilities-intro">
+          <div className="eyebrow light"><span /> {text.eyebrow}</div>
+          <h2>{text.title}<br/><em>{text.accent}</em></h2>
+          <p>{text.description}</p>
+        </div>
         <ol className="engineering-capability-list">{capabilities.map((capability,index)=>{const number=String(index+1).padStart(2,"0");return <li key={capability.kind}><span>{number}</span><div><h3>{capability.title[language]}</h3><p>{capability.copy[language]}</p></div><i aria-hidden="true">↗</i></li>})}</ol>
       </div>
     </div>
