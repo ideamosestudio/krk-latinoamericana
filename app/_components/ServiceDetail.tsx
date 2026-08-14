@@ -8,13 +8,13 @@ import { ProductCarousel, type ProductImage } from "./ProductCarousel";
 import { selectText, useLanguage, type LocalizedText } from "./LanguageProvider";
 
 export type ProductItem = { title: LocalizedText | string; en: string; es: string; images: ProductImage[] };
-export type GalleryItem = { file: string; alt: LocalizedText | string };
+export type GalleryItem = { file: string; alt: LocalizedText | string; position?: string };
 
 const galleryImages: GalleryItem[] = [
   { file: "PORTADA-006.jpg", alt: { es: "Sistema de transporte de materiales a granel sobre terminal marítima", en: "Bulk material conveying system at a maritime terminal" } },
   { file: "IMG-009.jpg", alt: { es: "Transportador industrial de KRK en operación", en: "KRK industrial conveyor in operation" } },
   { file: "engineering-gallery-03.webp", alt: { es: "Sistema transportador portuario de KRK sobre el mar", en: "KRK port conveyor system over the sea" } },
-  { file: "PORTADA-003.jpg", alt: { es: "Instalación industrial y sistema de transferencia", en: "Industrial facility and transfer system" } },
+  { file: "PORTADA-003.jpg", alt: { es: "Instalación industrial y sistema de transferencia", en: "Industrial facility and transfer system" }, position: "82% center" },
 ];
 
 type ServiceDetailProps = {
