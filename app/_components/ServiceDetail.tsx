@@ -11,8 +11,8 @@ export type ProductItem = { title: LocalizedText | string; en: string; es: strin
 export type GalleryItem = { file: string; alt: LocalizedText | string; position?: string };
 
 const galleryImages: GalleryItem[] = [
-  { file: "engineering-project-01.webp", alt: { es: "Modelo 3D de sistema transportador y domo de almacenamiento", en: "3D model of a conveyor system and storage dome" }, position: "56% center" },
   { file: "engineering-project-02.webp", alt: { es: "Simulación DEM de velocidad de transferencia de material", en: "DEM simulation of material transfer velocity" }, position: "58% center" },
+  { file: "engineering-project-01.webp", alt: { es: "Modelo 3D de sistema transportador y domo de almacenamiento", en: "3D model of a conveyor system and storage dome" }, position: "56% center" },
   { file: "engineering-project-03.webp", alt: { es: "Simulación DEM de flujo de material en chute", en: "DEM simulation of material flow through a chute" }, position: "57% center" },
   { file: "engineering-project-04.webp", alt: { es: "Modelo de ingeniería de chute y sistema de alimentación", en: "Engineering model of a chute and feeding system" }, position: "50% center" },
 ];
