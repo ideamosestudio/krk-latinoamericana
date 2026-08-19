@@ -917,3 +917,24 @@ select {
     line-height: 1.6;
   }
 }
+/* Keep the engineering banner actions free from the legacy text-link underline. */
+.engineering-banner .banner-content .double-actions a {
+  margin-top: 0;
+  border-bottom: 0;
+  font-size: 12px;
+}
+
+.engineering-banner .banner-content .double-actions .action-main {
+  padding: 0 7px 0 23px;
+}
+
+.engineering-banner .banner-content .double-actions .action-alt {
+  width: max-content;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .engineering-banner .banner-content .double-actions .action-alt {
+    justify-self: start;
+  }
+}
