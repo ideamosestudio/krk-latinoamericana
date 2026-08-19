@@ -8,7 +8,7 @@ import { ProductCarousel, type ProductImage } from "./ProductCarousel";
 import { selectText, useLanguage, type LocalizedText } from "./LanguageProvider";
 
 export type ProductItem = { title: LocalizedText | string; en: string; es: string; images: ProductImage[] };
-export type GalleryItem = { file: string; alt: LocalizedText | string; position?: string };
+export type GalleryItem = { file: string; alt: LocalizedText | string; position?: string; fit?: "cover" | "contain" };
 
 const galleryImages: GalleryItem[] = [
   { file: "engineering-project-02.webp", alt: { es: "Simulación DEM de velocidad de transferencia de material", en: "DEM simulation of material transfer velocity" }, position: "58% center" },

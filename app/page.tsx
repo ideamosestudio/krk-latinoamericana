@@ -22,7 +22,7 @@ const homeGalleryImages = [
   { file: "PORTADA-006.jpg", alt: { es: "Sistema de transporte de materiales a granel sobre terminal marítima", en: "Bulk material conveying system at a maritime terminal" }, position: "78% center" },
   { file: "IMG-009.jpg", alt: { es: "Transportador industrial de KRK en operación", en: "KRK industrial conveyor in operation" } },
   { file: "engineering-gallery-03.webp", alt: { es: "Sistema transportador portuario de KRK sobre el mar", en: "KRK port conveyor system over the sea" } },
-  { file: "engineering-gallery-04.webp", alt: { es: "Transportador industrial de KRK en operación invernal", en: "KRK industrial conveyor in winter operation" } },
+  { file: "engineering-gallery-04-scale-corrected.webp", alt: { es: "Transportador industrial de KRK en operación invernal", en: "KRK industrial conveyor in winter operation" }, position: "center", fit: "contain" as const },
 ];
 const sectors: { n: string; title: LocalizedText; copy: LocalizedText }[] = [
   { n: "01", title: { es: "Años de Experiencia", en: "Years of Experience" }, copy: { es: "Desarrollando sistemas de manejo de materiales a granel desde 2001.", en: "Developing bulk material handling systems since 2001." } },

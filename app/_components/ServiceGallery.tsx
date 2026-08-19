@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { selectText, useLanguage, type LocalizedText } from "./LanguageProvider";
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-type GalleryImage = { file: string; alt: LocalizedText | string; position?: string };
+type GalleryImage = { file: string; alt: LocalizedText | string; position?: string; fit?: "cover" | "contain" };
 
 export function ServiceGallery({ images }: { images: GalleryImage[] }) {
   const { language } = useLanguage();
@@ -29,7 +29,10 @@ export function ServiceGallery({ images }: { images: GalleryImage[] }) {
     <div className="container service-gallery-head"><div className="eyebrow light"><span /> {text.eyebrow}</div><h2>{text.title}<br /><em>{text.accent}</em></h2></div>
     <div className="service-gallery-grid">{images.map((image, index) => {
       const alt = selectText(image.alt, language);
-      return <button type="button" onClick={() => setActive(index)} key={`${image.file}-${index}`} aria-label={`${text.expand}: ${alt}`}><img src={`${base}/images/${image.file}`} alt={alt} style={image.position ? { objectPosition: image.position } : undefined} /><span>{String(index + 1).padStart(2, "0")} <i>↗</i></span></button>;
+      const imageUrl = `${base}/images/${image.file}`;
+      const frameStyle = image.fit === "contain" ? { "--gallery-image": `url(${imageUrl})` } as CSSProperties : undefined;
+      const imageStyle = { ...(image.position ? { objectPosition: image.position } : {}), ...(image.fit ? { objectFit: image.fit } : {}) };
+      return <button type="button" className={image.fit === "contain" ? "preserve-image-scale" : undefined} style={frameStyle} onClick={() => setActive(index)} key={`${image.file}-${index}`} aria-label={`${text.expand}: ${alt}`}><img src={imageUrl} alt={alt} style={imageStyle} /><span>{String(index + 1).padStart(2, "0")} <i>↗</i></span></button>;
     })}</div>
     {active !== null && createPortal(<div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label={activeAlt} onClick={() => setActive(null)}><button type="button" onClick={() => setActive(null)} aria-label={text.close}>×</button><img src={`${base}/images/${images[active].file}`} alt={activeAlt} onClick={(event) => event.stopPropagation()} /><p>{activeAlt}</p></div>, document.body)}
   </section>;
