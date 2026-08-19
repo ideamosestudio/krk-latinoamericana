@@ -880,3 +880,40 @@ select {
     transform: none;
   }
 }
+
+/* Experience cards: keep diagrams and copy in separate, stable mobile zones. */
+@media (max-width: 600px) {
+  .sectors .sector-card {
+    display: grid;
+    grid-template-rows: auto 210px auto;
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .sectors .sector-card .experience-visual {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 210px;
+    margin: 8px 0 0;
+  }
+
+  .sectors .sector-card .sector-copy-factual {
+    position: relative;
+    inset: auto;
+    margin: 18px 0 0;
+    padding: 28px 0 8px;
+    border-top: 1px solid #292d30;
+  }
+
+  .sectors .sector-card .sector-copy-factual h3 {
+    margin: 0 0 14px;
+    font-size: clamp(31px, 9.2vw, 39px);
+    line-height: 1.03;
+  }
+
+  .sectors .sector-card .sector-copy-factual p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
