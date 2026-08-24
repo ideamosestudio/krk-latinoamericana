@@ -1,0 +1,26 @@
+# KRK Latinoamericana
+
+> KRK Latinoamericana S.A. es una empresa argentina especializada en ingeniería, fabricación y ejecución de sistemas para el manejo de materiales a granel.
+
+Sitio oficial: https://krk.com.ar/
+Idiomas: español e inglés.
+Fundación: 2001.
+Ámbito: Argentina y Latinoamérica.
+
+## Contenido principal
+
+- [Quiénes somos](https://krk.com.ar/quienes-somos/): trayectoria, capacidad técnica y ejecución integral.
+- [Productos y servicios](https://krk.com.ar/servicios/): panorama de las cuatro áreas de servicio.
+- [Equipos para manejo de materiales a granel](https://krk.com.ar/servicios/bulk-material-handling-equipment/): cintas transportadoras, overland y pipe conveyors, elevadores, alimentadores y equipos complementarios.
+- [Componentes para transportadores](https://krk.com.ar/servicios/conveyor-components/): rodillos, poleas, estructuras, limpieza de bandas, chutes y tolvas.
+- [Sistemas portuarios y mineros](https://krk.com.ar/servicios/port-and-mining-systems/): manejo de granos, litio, minerales y carbón, acopio, recepción y transferencia.
+- [Servicios de ingeniería y proyectos](https://krk.com.ar/servicios/engineering-and-project-services/): ingeniería conceptual, básica y de detalle, diseño, compras, fabricación, QA/QC y asistencia en obra.
+
+## Datos verificables
+
+- Más de 25 años de experiencia.
+- Más de 700 proyectos ejecutados.
+- Oficinas comerciales: Monroe 5088, Piso 3, Ciudad Autónoma de Buenos Aires, Argentina.
+- Planta industrial: Av. Nicolás Bruzone 1136, Provincia de Buenos Aires, Argentina.
+
+Para una versión ampliada y bilingüe, consultar https://krk.com.ar/llms-full.txt

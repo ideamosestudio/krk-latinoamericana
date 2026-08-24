@@ -32,8 +32,8 @@ export function ServiceGallery({ images }: { images: GalleryImage[] }) {
       const imageUrl = `${base}/images/${image.file}`;
       const frameStyle = image.fit === "contain" ? { "--gallery-image": `url(${imageUrl})` } as CSSProperties : undefined;
       const imageStyle = { ...(image.position ? { objectPosition: image.position } : {}), ...(image.fit ? { objectFit: image.fit } : {}) };
-      return <button type="button" className={image.fit === "contain" ? "preserve-image-scale" : undefined} style={frameStyle} onClick={() => setActive(index)} key={`${image.file}-${index}`} aria-label={`${text.expand}: ${alt}`}><img src={imageUrl} alt={alt} style={imageStyle} /><span>{String(index + 1).padStart(2, "0")} <i>↗</i></span></button>;
+      return <button type="button" className={image.fit === "contain" ? "preserve-image-scale" : undefined} style={frameStyle} onClick={() => setActive(index)} key={`${image.file}-${index}`} aria-label={`${text.expand}: ${alt}`}><img src={imageUrl} alt={alt} style={imageStyle} loading="lazy" decoding="async" /><span>{String(index + 1).padStart(2, "0")} <i>↗</i></span></button>;
     })}</div>
-    {active !== null && createPortal(<div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label={activeAlt} onClick={() => setActive(null)}><button type="button" onClick={() => setActive(null)} aria-label={text.close}>×</button><img src={`${base}/images/${images[active].file}`} alt={activeAlt} onClick={(event) => event.stopPropagation()} /><p>{activeAlt}</p></div>, document.body)}
+    {active !== null && createPortal(<div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label={activeAlt} onClick={() => setActive(null)}><button type="button" onClick={() => setActive(null)} aria-label={text.close}>×</button><img src={`${base}/images/${images[active].file}`} alt={activeAlt} decoding="async" onClick={(event) => event.stopPropagation()} /><p>{activeAlt}</p></div>, document.body)}
   </section>;
 }

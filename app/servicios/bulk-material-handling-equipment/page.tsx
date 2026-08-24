@@ -92,7 +92,7 @@ const items: ProductItem[] = [
 export default function Page() {
   return <ServiceDetail
     title={{ es: "Equipos para manejo de materiales a granel", en: "Bulk material handling equipment" }}
-    image="PORTADA-006.jpg"
+    image="PORTADA-006.webp"
     introTitle={{ es: "Ingeniería para el movimiento", en: "Engineering for continuous" }}
     introAccent={{ es: "continuo de materiales.", en: "material movement." }}
     en="Engineered conveying equipment for reliable, efficient and continuous bulk material handling across demanding industrial operations."

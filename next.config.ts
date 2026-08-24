@@ -1,16 +1,17 @@
 import type { NextConfig } from "next";
 
-const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const siteUrl = process.env.SITE_URL ?? "https://krk.com.ar";
 
-const nextConfig: NextConfig = isGitHubPages
-  ? {
-      output: "export",
-      basePath: "/krk-latinoamericana",
-      assetPrefix: "/krk-latinoamericana/",
-      trailingSlash: true,
-      typescript: { ignoreBuildErrors: true },
-      env: { NEXT_PUBLIC_BASE_PATH: "/krk-latinoamericana" },
-    }
-  : { env: { NEXT_PUBLIC_BASE_PATH: "" } };
+const nextConfig: NextConfig = {
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
+  compress: true,
+  poweredByHeader: false,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: "",
+    NEXT_PUBLIC_SITE_URL: siteUrl,
+  },
+};
 
 export default nextConfig;

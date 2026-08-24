@@ -1,7 +1,5 @@
 import { ServiceDetail, type ProductItem } from "../../_components/ServiceDetail";
 
-const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-
 const items: ProductItem[] = [
   {
     title: { es: "Sistemas de manejo de granos y harina", en: "Grain and Flour Handling Systems" },
@@ -56,7 +54,7 @@ const items: ProductItem[] = [
 export default function Page() {
   return <ServiceDetail
     title={{ es: "Sistemas portuarios y mineros", en: "Port and mining systems" }}
-    image="BACK-002.jpg"
+    image="BACK-002.webp"
     introTitle={{ es: "Sistemas integrados para", en: "Integrated systems for" }}
     introAccent={{ es: "operaciones exigentes.", en: "demanding operations." }}
     en="Integrated bulk material handling systems engineered for mining, ports and industrial facilities, providing reliable and efficient solutions for material receiving, storage, transfer and processing operations."

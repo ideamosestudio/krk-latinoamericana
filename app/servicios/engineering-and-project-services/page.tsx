@@ -4,7 +4,7 @@ import { ServiceDetail } from "../../_components/ServiceDetail";
 export default function Page() {
   return <ServiceDetail
     title={{ es: "Servicios de ingeniería y proyectos", en: "Engineering and project services" }}
-    image="PORTADA-003.jpg"
+    image="PORTADA-003.webp"
     introTitle={{ es: "Ingeniería y gestión para", en: "Engineering and management for" }}
     introAccent={{ es: "ejecución integral.", en: "end-to-end execution." }}
     en="We develop conceptual, basic and detailed engineering for bulk material handling systems, integrating mechanical and structural design, technical specifications, procurement support, manufacturing management, QA/QC and site assistance during installation and commissioning. Our approach combines engineering expertise, field experience and project integration to reduce risk and optimize execution."

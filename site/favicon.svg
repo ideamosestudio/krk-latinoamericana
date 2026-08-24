@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>KRK Latinoamericana</title>
+  <rect width="64" height="64" rx="14" fill="#071018"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#173247" stroke-width="2"/>
+  <path d="M14 13h9v15.4L36.2 13h11.5L31 31.1 48.2 51H36.6L23 35.2V51h-9V13Z" fill="#fff"/>
+  <path d="m49 16 11 16-11 16 5.2-16L49 16Z" fill="#ff8700"/>
+</svg>

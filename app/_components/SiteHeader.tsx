@@ -97,7 +97,7 @@ export function SiteHeader() {
     <header className={`site-header ${scrolled ? "is-scrolled" : ""} ${menuOpen ? "menu-is-open" : ""}`}>
       <nav className="nav-shell" aria-label={text.navigation}>
         <a href={`${base}/`} className="brand" aria-label={text.home} onClick={close}>
-          <img src={`${base}/images/KRK-LOGO-BLANCO-3.png`} alt="KRK Latinoamericana" />
+          <img src={`${base}/images/KRK-LOGO-BLANCO-3.png`} alt="KRK Latinoamericana" decoding="async" />
         </a>
         <div className={`nav-links ${menuOpen ? "open" : ""}`} id="primary-navigation">
           <div className="nav-mobile-intro" aria-hidden="true"><span>{text.navigationLabel}</span><small>2001 — 2026</small></div>

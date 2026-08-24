@@ -1,7 +1,5 @@
 import { ServiceDetail, type ProductItem } from "../../_components/ServiceDetail";
 
-const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-
 const items: ProductItem[] = [
   {
     title: { es: "Rodillos y Soporte de rodillos", en: "Idlers and Idler Frames" },
@@ -54,7 +52,7 @@ const items: ProductItem[] = [
 export default function Page() {
   return <ServiceDetail
     title={{ es: "Componentes para transportadores", en: "Conveyor components" }}
-    image="IMG-009.jpg"
+    image="IMG-009.webp"
     introTitle={{ es: "Componentes diseñados para", en: "Components engineered for" }}
     introAccent={{ es: "máxima confiabilidad.", en: "maximum reliability." }}
     en="Engineered conveyor components focused on maximizing conveyor reliability and performance. Our core product line includes idlers and idler frames, complemented by pulleys, chutes and other essential conveyor components."
