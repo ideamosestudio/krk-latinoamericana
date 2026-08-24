@@ -28,7 +28,7 @@ const sectors: { n: string; title: LocalizedText; copy: LocalizedText }[] = [
   { n: "01", title: { es: "Años de Experiencia", en: "Years of Experience" }, copy: { es: "Desarrollando sistemas de manejo de materiales a granel desde 2001.", en: "Developing bulk material handling systems since 2001." } },
   { n: "02", title: { es: "Ingeniería Mecánica Especializada", en: "Mechanical Engineering Excellence" }, copy: { es: "Ingeniería especializada en manejo de materiales a granel, abarcando ingeniería conceptual, básica y de detalle, integrada con fabricación y ejecución de proyectos.", en: "Specialized engineering in bulk material handling, covering conceptual, basic and detailed design, integrated with project execution and manufacturing." } },
   { n: "03", title: { es: "Ejecución integral", en: "End-to-end execution" }, copy: { es: "Desde los estudios de factibilidad hasta la puesta en marcha.", en: "From feasibility studies through commissioning." } },
-  { n: "04", title: { es: "Proyectos ejecutados", en: "Projects delivered" }, copy: { es: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." } },
+  { n: "04", title: { es: "Proyectos ejecutados", en: "Projects delivered" }, copy: { es: "Experiencia comprobada en más de 700 proyectos ejecutados con éxito.", en: "Proven experience through more than 700 successfully completed projects." } },
 ];
 
 const services: { n: string; slug: string; title: LocalizedText; copy: LocalizedText }[] = [
