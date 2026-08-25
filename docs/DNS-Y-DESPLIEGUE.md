@@ -106,7 +106,7 @@ Para migrar manualmente:
 
 ## Formulario web y Microsoft 365
 
-El formulario publica en `/api/contact.php` y envía mediante Microsoft Graph desde `comercial@krk.com.ar` hacia `comercial@krk.com.ar`. No usa `mailto:`, SMTP básico ni la contraseña de una casilla.
+El formulario publica en `/api/contact.php` y envía mediante Microsoft Graph desde `noresponder@krk.com.ar` hacia `comercial@krk.com.ar`. No usa `mailto:`, SMTP básico ni la contraseña de una casilla.
 
 ### 1. Registrar la aplicación en Microsoft Entra
 
@@ -126,9 +126,9 @@ Ingresar en [Microsoft Entra](https://entra.microsoft.com/) con una cuenta admin
 10. Abrir **Certificados y secretos** → **Nuevo secreto de cliente**.
 11. Elegir una vigencia y copiar inmediatamente el campo **Valor**. El identificador del secreto no sirve.
 
-`Mail.Send` como permiso de aplicación permite enviar sin que una persona inicie sesión. Como medida adicional, el administrador de Microsoft 365 puede restringir la aplicación exclusivamente a la casilla `comercial@krk.com.ar` mediante RBAC para aplicaciones de Exchange Online.
+`Mail.Send` como permiso de aplicación permite enviar sin que una persona inicie sesión. Como medida adicional, el administrador de Microsoft 365 puede restringir la aplicación exclusivamente a la casilla `noresponder@krk.com.ar` mediante RBAC para aplicaciones de Exchange Online.
 
-La dirección `comercial@krk.com.ar` debe existir como casilla de usuario o casilla compartida en Microsoft 365. Si fuera solamente un alias, se debe usar como `sender` la casilla real y se puede mantener `comercial@krk.com.ar` como `recipient`.
+La dirección `noresponder@krk.com.ar` debe existir como casilla de usuario o casilla compartida en Microsoft 365. Si fuera solamente un alias, se debe usar como `sender` la casilla real y se puede mantener `comercial@krk.com.ar` como `recipient`.
 
 ### 2. Crear el archivo privado en cPanel
 
@@ -145,7 +145,7 @@ Aplicar permisos `600` o, si el hosting lo requiere, `640`. La extensión PHP cU
 1. En Git Version Control, ejecutar **Update from Remote**.
 2. Ejecutar **Deploy HEAD Commit**.
 3. Enviar una consulta de prueba desde `https://krk.com.ar/#contacto`.
-4. Confirmar el mensaje en `comercial@krk.com.ar` y la copia en **Elementos enviados** de esa casilla.
+4. Confirmar el mensaje en `comercial@krk.com.ar` y la copia en **Elementos enviados** de `noresponder@krk.com.ar`.
 5. Presionar **Responder** y comprobar que la respuesta quede dirigida al correo ingresado por el visitante.
 
 Si falta la configuración privada o Microsoft rechaza el permiso, el visitante verá un mensaje genérico y el detalle técnico quedará solamente en el registro de errores PHP del servidor.

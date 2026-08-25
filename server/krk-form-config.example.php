@@ -5,7 +5,7 @@ return [
     'tenant_id' => 'PEGAR_ID_DEL_DIRECTORIO_TENANT',
     'client_id' => 'PEGAR_ID_DE_LA_APLICACION',
     'client_secret' => 'PEGAR_VALOR_DEL_SECRETO',
-    'sender' => 'comercial@krk.com.ar',
+    'sender' => 'noresponder@krk.com.ar',
     'recipient' => 'comercial@krk.com.ar',
     'allowed_origins' => [
         'https://krk.com.ar',
