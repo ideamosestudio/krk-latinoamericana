@@ -120,14 +120,20 @@ function curl_request(string $url, array $options): array
         throw new RuntimeException('Could not initialize cURL');
     }
 
-    curl_setopt_array($handle, [
+    $defaults = [
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CONNECTTIMEOUT => 5,
         CURLOPT_TIMEOUT => 20,
         CURLOPT_SSL_VERIFYPEER => true,
         CURLOPT_SSL_VERIFYHOST => 2,
-        ...$options,
-    ]);
+    ];
+
+    foreach ($defaults + $options as $option => $value) {
+        if (!curl_setopt($handle, (int) $option, $value)) {
+            curl_close($handle);
+            throw new RuntimeException('Could not configure cURL option ' . $option);
+        }
+    }
 
     $body = curl_exec($handle);
     if ($body === false) {
