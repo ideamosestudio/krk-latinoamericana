@@ -47,4 +47,4 @@ Después de subir una actualización a GitHub:
 3. Presionar **Update from Remote**.
 4. Presionar **Deploy HEAD Commit**.
 
-La configuración de DNS, correo y despliegue está documentada en [docs/DNS-Y-DESPLIEGUE.md](docs/DNS-Y-DESPLIEGUE.md).
+La configuración de DNS, correo, formulario con Microsoft 365 y despliegue está documentada en [docs/DNS-Y-DESPLIEGUE.md](docs/DNS-Y-DESPLIEGUE.md).
