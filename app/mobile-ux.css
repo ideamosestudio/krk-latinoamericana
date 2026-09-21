@@ -734,6 +734,17 @@ select {
     align-items: center;
     text-align: center;
   }
+
+  footer .footer-credit {
+    justify-content: center;
+    max-width: 290px;
+    flex-wrap: wrap;
+    line-height: 1.7;
+  }
+
+  footer .footer-credit > span {
+    white-space: normal;
+  }
 }
 
 /* Mobile audit 2026-08-19: tighter rhythm, touch-safe media and faithful image scale */
