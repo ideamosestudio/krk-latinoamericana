@@ -14,6 +14,8 @@ import "./mobile-ux.css";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://krk.com.ar";
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const socialImage = `${siteUrl.replace(/\/$/, "")}/og.jpg`;
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -62,7 +64,7 @@ export const metadata: Metadata = {
     description: "Ingeniería, fabricación y ejecución de sistemas para transporte de materiales a granel.",
     url: siteUrl,
     siteName: "KRK Latinoamericana",
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "KRK — Moving What Matters" }],
+    images: [{ url: socialImage, width: 1200, height: 630, alt: "KRK — Moving What Matters" }],
     locale: "es_AR",
     alternateLocale: ["en_US"],
     type: "website",
@@ -71,9 +73,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "KRK Latinoamericana | Moving What Matters",
     description: "Engineering, manufacturing and execution of bulk material handling systems.",
-    images: ["/og.jpg"],
+    images: [socialImage],
   },
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: { icon: `${assetBase}/favicon.svg`, shortcut: `${assetBase}/favicon.svg` },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
