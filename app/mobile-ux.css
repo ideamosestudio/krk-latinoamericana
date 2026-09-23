@@ -949,3 +949,12 @@ select {
     justify-self: start;
   }
 }
+
+/* Center the mobile hero without changing desktop or form layouts. */
+@media (max-width: 767px) {
+  .hero-content{text-align:center;align-items:center}
+  .hero-content h1,.hero-description{margin-inline:auto}
+  .hero-content .double-actions{justify-content:center;align-items:center;margin-inline:auto}
+  .hero-content .action-main,.hero-content .action-alt{justify-content:center;min-height:44px}
+
+}
