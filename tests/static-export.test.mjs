@@ -18,6 +18,12 @@ const requiredFiles = [
   "llms.txt",
   "llms-full.txt",
   "api/contact.php",
+  "images/hero-portada-krk-960.webp",
+  "images/BACK-002-960.webp",
+  "images/quienes-somos-hero-960.webp",
+  "images/PORTADA-003-960.webp",
+  "images/PORTADA-006-960.webp",
+  "images/IMG-009-960.webp",
 ];
 
 test("exports every public route and discovery file", async () => {
@@ -53,5 +59,24 @@ test("contact endpoint uses private Microsoft Graph configuration", async () => 
   assert.match(php, /graph\.microsoft\.com\/v1\.0\/users/);
   assert.match(php, /krk-form-config\.php/);
   assert.match(php, /rate_limit_allows/);
+  assert.match(php, /HTTP_SEC_FETCH_SITE/);
+  assert.match(php, /JSON_THROW_ON_ERROR/);
+  assert.match(php, /Content-Security-Policy/);
+  assert.match(php, /Service temporarily unavailable/);
   assert.doesNotMatch(php, /PEGAR_VALOR_DEL_SECRETO/);
+});
+
+test("cPanel release enables transport, browser and caching protections", async () => {
+  const htaccess = await readFile(new URL(".htaccess", cpanelRelease), "utf8");
+  assert.match(htaccess, /Strict-Transport-Security/);
+  assert.match(htaccess, /Content-Security-Policy/);
+  assert.match(htaccess, /frame-ancestors 'none'/);
+  assert.match(htaccess, /X-Frame-Options "DENY"/);
+  assert.match(htaccess, /Cross-Origin-Opener-Policy/);
+  assert.match(htaccess, /BROTLI_COMPRESS/);
+  assert.match(htaccess, /krk_immutable_asset/);
+});
+test("GitHub Pages excludes server-only PHP files", async () => {
+  const workflow = await readFile(new URL("../.github/workflows/pages.yml", import.meta.url), "utf8");
+  assert.match(workflow, /rm -rf out\/api out\/\.htaccess/);
 });

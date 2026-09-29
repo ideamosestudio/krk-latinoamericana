@@ -6,6 +6,14 @@ import { selectText, useLanguage, type LocalizedText } from "./LanguageProvider"
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
+const heroImageMeta: Record<string, { width: number; height: number }> = {
+  "BACK-002.webp": { width: 1920, height: 1080 },
+  "quienes-somos-hero.webp": { width: 1920, height: 1080 },
+  "PORTADA-003.webp": { width: 1920, height: 1080 },
+  "PORTADA-006.webp": { width: 1672, height: 941 },
+  "IMG-009.webp": { width: 986, height: 868 },
+};
+
 const footerCopy = {
   es: { description: "Ingeniería, fabricación y ejecución de sistemas para transporte de materiales a granel.", top: "VOLVER ARRIBA ↑", offices: "OFICINAS COMERCIALES", officeAddress: <>Monroe 5088 (CP1431). Piso 3.<br />Ciudad Autónoma de Buenos Aires, Argentina.<br />Tel +54 11 6841-7800</>, plant: "PLANTA INDUSTRIAL", plantAddress: <>Av. Nicolás Bruzone 1136 (B1838BHD).<br />Provincia de Buenos Aires, Argentina.</>, navigation: "NAVEGACIÓN", about: "Quiénes somos", services: "Productos y servicios", industries: "Industrias", presence: "PRESENCIA", countriesLine1: "Argentina · Chile · Brasil", countriesLine2: "Paraguay · Uruguay", credit: "UNA EXPERIENCIA EN MOVIMIENTO · IDEADA POR", creditLabel: "Sitio web ideado por Estudio Ideamos" },
   en: { description: "Engineering, manufacturing and execution of bulk material handling systems.", top: "BACK TO TOP ↑", offices: "COMMERCIAL OFFICES", officeAddress: <>Monroe 5088 (CP1431), 3rd floor.<br />Autonomous City of Buenos Aires, Argentina.<br />Tel +54 11 6841-7800</>, plant: "INDUSTRIAL PLANT", plantAddress: <>Av. Nicolás Bruzone 1136 (B1838BHD).<br />Buenos Aires Province, Argentina.</>, navigation: "NAVIGATION", about: "About us", services: "Products and services", industries: "Industries", presence: "PRESENCE", countriesLine1: "Argentina · Chile · Brazil", countriesLine2: "Paraguay · Uruguay", credit: "A DIGITAL EXPERIENCE IN MOTION · CREATED BY", creditLabel: "Website created by Estudio Ideamos" },
@@ -20,7 +28,10 @@ export function SiteFooter() {
 export function InnerHero({ eyebrow, title, accent, image, description }: { eyebrow: LocalizedText | string; title: LocalizedText | string; accent?: LocalizedText | string; image: string; description?: LocalizedText | string }) {
   const { language } = useLanguage();
   const actions = language === "es" ? { explore: "Explorar contenido", project: "Iniciar un proyecto" } : { explore: "Explore content", project: "Start a project" };
-  return <section className="inner-hero" id="top"><img src={`${base}/images/${image}`} alt="" fetchPriority="high" decoding="async" /><div className="inner-hero-shade" /><div className="inner-hero-grid" /><div className="container inner-hero-content"><div className="hero-kicker"><span>{selectText(eyebrow, language)}</span></div><h1><span>{selectText(title, language)}</span>{accent && <em>{selectText(accent, language)}</em>}</h1>{description && <p>{selectText(description, language)}</p>}<div className="inner-hero-actions"><a href="#contenido">{actions.explore} <i>↗</i></a><a href={`${base}/#contacto`}><i>↓</i> {actions.project}</a></div></div><div className="hero-tech hero-tech-b"><span>KRK / {language === "es" ? "CAPACIDADES" : "CAPABILITIES"}</span><i /></div></section>;
+  const imageMeta = heroImageMeta[image] ?? { width: 1920, height: 1080 };
+  const mobileImage = image.replace(/\.webp$/i, "-960.webp");
+  const mobileWidth = Math.min(960, imageMeta.width);
+  return <section className="inner-hero" id="top"><img src={`${base}/images/${image}`} srcSet={`${base}/images/${mobileImage} ${mobileWidth}w, ${base}/images/${image} ${imageMeta.width}w`} sizes="100vw" width={imageMeta.width} height={imageMeta.height} alt="" fetchPriority="high" decoding="async" /><div className="inner-hero-shade" /><div className="inner-hero-grid" /><div className="container inner-hero-content"><div className="hero-kicker"><span>{selectText(eyebrow, language)}</span></div><h1><span>{selectText(title, language)}</span>{accent && <em>{selectText(accent, language)}</em>}</h1>{description && <p>{selectText(description, language)}</p>}<div className="inner-hero-actions"><a href="#contenido">{actions.explore} <i>↗</i></a><a href={`${base}/#contacto`}><i>↓</i> {actions.project}</a></div></div><div className="hero-tech hero-tech-b"><span>KRK / {language === "es" ? "CAPACIDADES" : "CAPABILITIES"}</span><i /></div></section>;
 }
 
 export function InnerShell({ children }: { children: ReactNode }) {

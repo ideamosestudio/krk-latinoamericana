@@ -5,6 +5,11 @@ header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store, max-age=0');
 header('X-Content-Type-Options: nosniff');
 header('X-Robots-Tag: noindex, nofollow');
+header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'; base-uri 'none'");
+header('X-Frame-Options: DENY');
+header('Referrer-Policy: no-referrer');
+header('Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()');
+header('Cross-Origin-Resource-Policy: same-origin');
 
 function respond(int $status, array $payload): void
 {
@@ -17,8 +22,20 @@ function request_payload(): array
 {
     $contentType = strtolower((string) ($_SERVER['CONTENT_TYPE'] ?? ''));
     if (str_contains($contentType, 'application/json')) {
-        $raw = file_get_contents('php://input');
-        $decoded = json_decode($raw ?: '', true);
+        $raw = file_get_contents('php://input', false, null, 0, 32769);
+        if ($raw === false) {
+            respond(400, ['ok' => false, 'message' => 'Invalid request body']);
+        }
+        if (strlen($raw) > 32768) {
+            respond(413, ['ok' => false, 'message' => 'Request too large']);
+        }
+
+        try {
+            $decoded = json_decode($raw, true, 32, JSON_THROW_ON_ERROR);
+        } catch (JsonException) {
+            respond(400, ['ok' => false, 'message' => 'Invalid JSON']);
+        }
+
         return is_array($decoded) ? $decoded : [];
     }
 
@@ -32,7 +49,11 @@ function text_length(string $value): int
 
 function required_text(array $payload, string $key, int $maximum): string
 {
-    $value = trim((string) ($payload[$key] ?? ''));
+    $raw = $payload[$key] ?? '';
+    if (!is_string($raw)) {
+        throw new InvalidArgumentException($key);
+    }
+    $value = trim($raw);
     if ($value === '' || text_length($value) > $maximum) {
         throw new InvalidArgumentException($key);
     }
@@ -42,7 +63,11 @@ function required_text(array $payload, string $key, int $maximum): string
 
 function optional_text(array $payload, string $key, int $maximum): string
 {
-    $value = trim((string) ($payload[$key] ?? ''));
+    $raw = $payload[$key] ?? '';
+    if (!is_string($raw)) {
+        throw new InvalidArgumentException($key);
+    }
+    $value = trim($raw);
     if (text_length($value) > $maximum) {
         throw new InvalidArgumentException($key);
     }
@@ -75,7 +100,7 @@ function request_origin(): string
     return strtolower($parts['scheme'] . '://' . $parts['host']);
 }
 
-function rate_limit_allows(string $ip, int $maximum = 5, int $windowSeconds = 900): bool
+function rate_limit_allows(string $ip, int $maximum = 5, int $windowSeconds = 900): ?bool
 {
     $path = sys_get_temp_dir() . '/krk-contact-rate-' . hash('sha256', $ip) . '.json';
     $handle = @fopen($path, 'c+');
@@ -83,7 +108,8 @@ function rate_limit_allows(string $ip, int $maximum = 5, int $windowSeconds = 90
         if (is_resource($handle)) {
             fclose($handle);
         }
-        return true;
+        error_log('KRK contact form: rate-limit storage is unavailable');
+        return null;
     }
 
     $raw = stream_get_contents($handle);
@@ -99,9 +125,20 @@ function rate_limit_allows(string $ip, int $maximum = 5, int $windowSeconds = 90
     }
 
     rewind($handle);
-    ftruncate($handle, 0);
-    fwrite($handle, json_encode($events));
-    fflush($handle);
+    $encoded = json_encode($events);
+    if (!is_string($encoded) || !ftruncate($handle, 0)) {
+        flock($handle, LOCK_UN);
+        fclose($handle);
+        error_log('KRK contact form: could not prepare rate-limit state');
+        return null;
+    }
+    $written = fwrite($handle, $encoded);
+    if ($written === false || $written !== strlen($encoded) || !fflush($handle)) {
+        flock($handle, LOCK_UN);
+        fclose($handle);
+        error_log('KRK contact form: could not persist rate-limit state');
+        return null;
+    }
     flock($handle, LOCK_UN);
     fclose($handle);
     @chmod($path, 0600);
@@ -257,8 +294,18 @@ if (!is_array($allowedOrigins) || $origin === '' || !in_array($origin, array_map
     respond(403, ['ok' => false, 'message' => 'Invalid request origin']);
 }
 
+$fetchSite = strtolower(trim((string) ($_SERVER['HTTP_SEC_FETCH_SITE'] ?? '')));
+if ($fetchSite !== '' && !in_array($fetchSite, ['same-origin', 'same-site'], true)) {
+    respond(403, ['ok' => false, 'message' => 'Invalid request context']);
+}
+
 $payload = request_payload();
-if (trim((string) ($payload['website'] ?? '')) !== '') {
+try {
+    $website = optional_text($payload, 'website', 200);
+} catch (InvalidArgumentException) {
+    respond(422, ['ok' => false, 'message' => 'Invalid form data']);
+}
+if ($website !== '') {
     respond(200, ['ok' => true]);
 }
 
@@ -269,7 +316,11 @@ if ($elapsed < 2500 || $elapsed > 7200000) {
 }
 
 $ip = (string) ($_SERVER['REMOTE_ADDR'] ?? 'unknown');
-if (!rate_limit_allows($ip)) {
+$rateLimit = rate_limit_allows($ip);
+if ($rateLimit === null) {
+    respond(503, ['ok' => false, 'message' => 'Service temporarily unavailable']);
+}
+if (!$rateLimit) {
     respond(429, ['ok' => false, 'message' => 'Too many requests']);
 }
 

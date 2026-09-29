@@ -36,6 +36,10 @@ export function ContactForm({ text, language }: { text: ContactFormText; languag
 
   async function submitForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (assetBase) {
+      window.location.assign("https://krk.com.ar/#contacto");
+      return;
+    }
     const form = event.currentTarget;
     if (!form.reportValidity() || status === "sending") return;
 
@@ -76,7 +80,7 @@ export function ContactForm({ text, language }: { text: ContactFormText; languag
         <input type="text" name="website" tabIndex={-1} autoComplete="off" />
       </label>
       <div className="form-actions">
-        <button type="submit" disabled={status === "sending"}>
+        <button type="submit" formNoValidate={Boolean(assetBase)} disabled={status === "sending"}>
           <span>{status === "sending" ? text.sending : text.send}</span><i>↗</i>
         </button>
         <a href="#top"><i>↓</i><span>{text.back}</span></a>
